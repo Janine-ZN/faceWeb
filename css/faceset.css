@@ -1,0 +1,195 @@
+body {
+	/*font-weight: 500;*/
+	font-size: 1.05em;
+	font-family: "微软雅黑";
+	margin: 0;
+}
+
+.entirety {
+	width: 100%;
+	height: 600px;
+}
+
+.left_rep {
+	display: inline;
+	float: left;
+	width: 250px;
+	height: 500px;
+	border: 1px dashed #8e8e8e;
+	margin: 0 20px 0 0;
+	background-color: #fff;
+}
+
+.face_rep {
+	height: 40px;
+	border-bottom: 1px dashed #8E8E8E;
+}
+
+.face_rep_font {
+	margin: 10px 0 20px 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	color: #155CEC;
+	vertical-align: middle;
+}
+
+.add_img {
+	margin: 8px 0 10px 0px;
+}
+
+.add_rep {
+	margin-top: 8px;
+	margin-right: 10px;
+	float: right;
+}
+
+.various_libs {
+	margin-top: 10px;
+}
+
+.libs {
+	margin: 0px;
+	padding: 10px 0px 10px 30px;
+	font-size: 16px;
+	color: #000;
+	vertical-align: middle;
+}
+
+.right_content {
+	margin: 0px 5px;
+	position: absolute;
+	left: 260px;
+	height: 500px;
+	font-size: 14px;
+}
+
+.right_content .right_top_title {
+	height: 20px;
+	width: 100%;
+	font-size: 16px;
+	color: #155CEB;
+	background-image: url(../img/left.png);
+	background-repeat: no-repeat;
+}
+
+.right_top_title_font {
+	margin: -3px 10px;
+	float: left;
+}
+
+.right_content .right_content_table {
+	margin-top: 15px;
+	height: 70px;
+	background-color: #fff;
+	width: 100%;
+}
+
+.right_content_info {
+	margin-top: 10px;
+}
+
+
+/*********************************标题、输入框和虚线框组合****************************************/
+
+.input_txt {
+	float: left;
+	margin-top: 14px;
+	margin-right: 20px;
+	height: 30px;
+	width: 200px;
+	text-align: right;
+	border: 1px dashed #8e8e8e;
+	border-radius: 20px;
+}
+
+.label_name {
+	position: absolute;
+	top: 38px;
+	left: 30px;
+}
+
+.input_name {
+	width: 100px;
+	border: none;
+	position: absolute;
+	top: 52px;
+	left: 90px;
+}
+
+.label_gender {
+	position: absolute;
+	top: 38px;
+	left: 250px;
+}
+
+.input_gender {
+	border: none;
+	width: 100px;
+	position: absolute;
+	top: 52px;
+	left: 310px;
+}
+
+.label_id {
+	position: absolute;
+	top: 38px;
+	left: 470px;
+}
+
+.input_id {
+	width: 280px;
+	border: none;
+	position: absolute;
+	top: 52px;
+	left: 600px;
+}
+
+
+/*********************************绘制一个按钮*********************************/
+
+.overall {
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 93px;
+	height: 30px;
+	font-size: 14px;
+}
+
+.bule_button {
+	background-color: #155cec;
+	color: #FFFFFF;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border: none;
+}
+
+.dotted_button {
+	background-color: #fff;
+	color: #155cec;
+	border-radius: 30px;
+	border: 1px dashed #155cec;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+/*************************************表格的内容*************************************/
+.content_table {
+	margin-top: 30px;
+	height: 600px;
+}
+
+.content_table_button {
+	margin-left: -10px;
+}
+
+.overall_button {
+	margin-left: 10px;
+	width: 93px;
+	height: 30px;
+	font-size: 14px;
+}
+
+.img_button {
+	width: 10px;
+}

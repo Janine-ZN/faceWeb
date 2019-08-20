@@ -1,0 +1,87 @@
+table {
+	position: absolute;
+	width: 99.9%;
+	text-align: center;
+	border: 1px solid #BBB;
+	border-collapse:collapse;
+	vertical-align: middle;
+}
+
+thead tr th {
+	font-size: 14px;
+	color: #66838e;
+	text-align: center;
+	border-bottom: 1px solid #BBB;
+}
+
+table tr:nth-child(odd) {
+	background: #f8f8f8;/*隔行变色*/
+}
+
+/*********************************************主体tbody样式**********************************************/
+tbody tr td {
+	font-size: 14px;
+	color: #000000;
+	border-bottom: 1px solid #BBB;
+}
+
+tbody tr td a {
+	font-size: 14px;
+	color: #8E8E8E;
+}
+
+tbody tr td a:hover {
+	text-decoration: none;
+	color: #155CEC;
+}
+
+/**********************************************自定义多选框按钮样式**********************************************/
+.checkbox {
+	display: inline-block;
+	cursor: pointer;
+	background: transparent;
+}
+
+.checkbox input {
+	display: none;
+}
+
+.checkbox i {
+	position: relative;
+	top: 4px;
+	left: 10px;
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url('../img/unselected.png')left top no-repeat;
+	background-size: cover;
+	background-image: url('../img/unselected.png');
+}
+
+.checkbox input:checked+i {
+	background: url('../img/selected.png')left top no-repeat;
+	background-size: cover;
+}
+
+
+/**********************************************脚部tfoot样式**********************************************/
+
+tfoot tr td {
+	position: relative;
+	font-size: 12px;
+	height: 30px;
+	color: #666666;
+	text-align: right;
+}
+
+tfoot tr td span a:hover {
+	color: red;
+	text-decoration: none;
+}
+
+.table_active {
+	color: #FFFFFF;
+	text-decoration: none;
+	background: rgb(21, 101, 183);
+	border-radius: 3px;
+}

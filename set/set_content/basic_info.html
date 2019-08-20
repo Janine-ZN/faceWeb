@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/basicinfo.css"/>
+	</head>
+	 <!--选项卡--> 
+<body>
+    <div class="tab">  
+        <!--选项的头部-->  
+        <div class="tab-header clear">  
+            <ul>  
+                <li class="selected first_li">
+                	<span>基本信息</span>
+                </li>  
+            </ul>  
+        </div>  
+        <!--主要内容-->  
+        <div class="tab-content">
+        	<div class="content" id="basic_content" style="display:none;">
+            <form id="basic_form" method="post">
+            	<ul>
+            		<li><div class="radius"><span class="li_span">备注名称：</span><input type="text" class="text_input"/></div></li>
+            		<li><div class="radius"><span class="li_span">备注：</span><input type="text" class="text_input"/></div></li>
+            		<li><div class="radius"><span class="li_span">Ispan地址：</span><input type="text" class="text_input"/></div></li>
+            		<li><div class="radius"><span class="li_span">MAC地址：</span><input type="text" class="text_input"/></div></li>
+            		<li><div class="radius"><span class="li_span">软件版本：</span><input type="text" class="text_input"/></div></li>
+            		<li>
+            			<input type="button" id="save_id" class="save" value="填写好了，现在保存" />
+            			<input type="reset" class="reset" value="重置"/>
+            		</li>
+            	</ul>
+            	
+            </form>
+            </div>
+            <!---->
+            <div class="content" id="bas_change" style="display:block;">
+					<ul>
+						<li><span class="span_left">设备名称：</span><span class="span_right">IP Camera</span></li>
+						<li><span class="span_left">备注：</span><span class="span_right">大会议室门口</span></li>
+						<li><span class="span_left">IP地址：</span><span class="span_right">192.168.10.12</span></li>
+						<li><span class="span_left">MAC地址：</span><span class="span_right">00-30-67-3F-7C-90</span></li>
+						<li><span class="span_left">软件版本：</span><span class="span_right">V 0.2.01 Beta</span></li>
+
+					</ul>
+					<br />
+						<input type="button" id="bas_button" class="change_button" value="修改" />
+					
+			</div>
+        </div>  
+    </div>  
+    <script type="text/javascript" src="../../js/basic_info.js"></script>
+</body>  
+</html>

@@ -1,0 +1,372 @@
+.video_jump {
+	position: absolute;
+	width: 100%;
+	height: 800px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #080808;
+}
+
+.jump-label {
+	position: relative;
+	color: #8e8e8e;
+}
+
+.jump_frame {
+	padding-top: 25px;
+	color: #000000;
+	border: 0;
+}
+
+.platform_update_btn {
+	margin-left: 0px;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	color: white;
+	background-color: #155cec;
+	border: 1px dashed #155cec;
+}
+
+.con {
+	position: absolute;
+	width: 700px;
+	height: 1000px;
+}
+
+.plat {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.plat_select {
+	margin-left: -60px;
+	margin-top: 5px;
+	width: 500px;
+	height: 30px;
+	padding: 0 0 0 370px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.edition {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.editiont_select {
+	margin-left: -60px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 170px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.port {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.port_input {
+	margin-left: -60px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.server {
+	position: relative;
+	top: -15px;
+	left: 18px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.server_input {
+	margin-left: -80px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.server_domain {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.server_domain_input {
+	margin-left: -60px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.server_ad {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.server_ad_input {
+	margin-left: -90px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.server_port {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.server_port_input {
+	margin-left: -73px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.SIP_name {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.SIP_name_input {
+	margin-left: -67px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.SIP_ID {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.SIP_ID_input {
+	margin-left: -73px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.password {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.password_input {
+	margin-left: -40px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.password_again {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.password_again_input {
+	margin-left: -40px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.validity {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.validity_input {
+	margin-left: -75px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.state {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.state_select {
+	margin-left: -40px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 230px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.period {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.period_input {
+	margin-left: -63px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.bit_rate {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.bit_rate_select {
+	margin-left: -75px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 230px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.overtime {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.overtime_input {
+	margin-left: -110px;
+	margin-top: 25px;
+	width: 620px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.save {
+	margin-left: 5px;
+	margin-top: 30px;
+	width: 300px;
+	height: 30px;
+	border-radius: 15px;
+	color: white;
+	background-color: #155cec;
+	border: 1px dashed #8e8e8e;
+}
+
+.reset {
+	margin-left: 18px;
+	margin-top: 30px;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	color: #155cec;
+	background-color: white;
+	border: 1px dashed #155cec;
+}
+
+.set {
+	position: relative;
+	margin-left: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: #155cec;
+}
+

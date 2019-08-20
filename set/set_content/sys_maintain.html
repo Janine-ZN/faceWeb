@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>寰景信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/faceset.css" />
+		<link rel="stylesheet" href="../../css/tab_ switch.css">
+		<link rel="stylesheet" href="../../css/table_info.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/xcConfirm.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dialog.css" />
+	</head>
+	<style>
+		.con {
+			position: absolute;
+			top: 50px;
+			width: 800px;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			color: #8E8E8E;
+		}
+		
+		.con .con_location_save {
+			position: relative;
+		}
+		/*本地存储样式*/
+		
+		.con_location_save label {
+			position: relative;
+			top: 20px;
+			left: 5px;
+		}
+		
+		.con_location_save .progress {
+			position: absolute;
+			left: 85px;
+			width: 340px;
+			height: 11px;
+			background: #e1f8ff;
+			border-radius: 15px;
+		}
+		
+		.progress .progress_bar {
+			position: absolute;
+			/*width: 340px;*/
+			height: 11px;
+			background: #00e4ac;
+			border-radius: 15px;
+		}
+		
+		.progress_img {
+			position: relative;
+			top: 5px;
+			left: 5px;
+		}
+		
+		.con_location_save .progress_reset {
+			position: relative;
+			top: 20px;
+			left: 370px;
+			color: #155cec;
+		}
+		
+		.progress_reset a:hover {
+			text-underline: none;
+			color: red;
+		}
+		
+		.con_location_save .progress_info {
+			position: relative;
+			top: 20px;
+		}
+		/*系统维护样式*/
+		
+		.con .con_system {
+			position: absolute;
+			top: 90px;
+			left: -25px;
+		}
+		
+		.con_system div {
+			border: 1px dashed #8E8E8E;
+			width: 523px;
+			position: relative;
+			top: -27px;
+			left: 115px;
+		}
+		
+		.con .con_product {
+			position: relative;
+			top: 100px;
+			margin-top: 20px;
+		}
+		
+		.con_product_ip {
+			position: relative;
+			width: 300px;
+			height: 34px;
+			border: 1px dashed #8E8E8E;
+			border-radius: 15px;
+		}
+		
+		.con_product .con_product_ip label {
+			background: #FFFFFF;
+			position: relative;
+			top: -13px;
+			left: 8px;
+		}
+		
+		.con_product .con_product_ip input {
+			border: none;
+			position: relative;
+			top: -16px;
+			left: 30px;
+			width: 250px;
+		}
+		
+		.con_product_name {
+			position: relative;
+			top: -35px;
+			left: 320px;
+			width: 300px;
+			height: 34px;
+			border: 1px dashed #8E8E8E;
+			border-radius: 15px;
+		}
+		
+		.con_product .con_product_name label {
+			background: #FFFFFF;
+			position: relative;
+			top: -13px;
+			left: 8px;
+		}
+		
+		.con_product .con_product_name input {
+			border: none;
+			position: relative;
+			top: -16px;
+			left: 30px;
+			width: 250px;
+		}
+		
+		.con .con_info {
+			position: relative;
+		}
+		
+		.con_info {
+			position: relative;
+			top: 90px;
+			width: 623px;
+			margin-top: 10px;
+			height: 34px;
+			border: 1px dashed #8E8E8E;
+			border-radius: 15px;
+		}
+		
+		.con_info label {
+			background: #FFFFFF;
+			position: relative;
+			top: -13px;
+			left: 8px;
+		}
+		
+		.con_info input {
+			border: none;
+			position: relative;
+			top: -16px;
+			left: 40px;
+			width: 530px;
+		}
+		
+		.con .con_button {
+			position: relative;
+			top: 90px;
+			/*border: 1px dashed #000000;*/
+		}
+		
+		.con_button_reset {
+			position: relative;
+			left: 10px;
+			margin-top: 30px;
+			width: 285px;
+			height: 35px;
+			background: #155ceb;
+			border-radius: 25px;
+			color: #FFFFFF;
+			border: none;
+		}
+		
+		.con_button_restart {
+			position: relative;
+			left: 32px;
+			margin-top: 30px;
+			width: 85px;
+			height: 35px;
+			background: #FFFFFF;
+			border-radius: 25px;
+			border: 1px dashed #155CEB;
+			color: #155ceb;
+		}
+		/*格式化操作成功*/
+		
+		.video-dialog-reset {
+			position: relative;
+			left: 140px;
+			background: #fff;
+		}
+		
+		.video-dialog-reset label {
+			position: absolute;
+			top: 90px;
+			left: 0px;
+		}
+		
+		.video-dialog-reset .con_button_reset {
+			position: absolute;
+			top: 120px;
+			left: -10px;
+			width: 110px;
+		}
+		/*格式化失败*/
+		
+		.video-dialog-reset .confirm {
+			position: absolute;
+			top: 150px;
+			left: -60px;
+			width: 100px;
+			height: 35px;
+			background: #155ceb;
+			border-radius: 25px;
+			color: #FFFFFF;
+			border: none;
+		}
+		
+		.video-dialog-reset .con_button_restart {
+			position: absolute;
+			top: 120px;
+			left: 60px;
+			width: 140px;
+		}
+	</style>
+
+	<body>
+		<div class="main">
+			<input type="radio" id="video_maintenance" name="show" checked/>
+			<input type="radio" id="pm" name="show" />
+			<div class="tab">
+				<label for="video_maintenance">摄像机维护</label>
+				<label for="pm">用户管理</label>
+			</div>
+			<div class="content">
+				<div class="content-dis">
+
+					<!--摄像机维护页面开始-->
+					<div class="con">
+
+						<!--第一行-->
+						<div class="con_location_save">
+							<label class="">本地存储：</label>
+							<div class="progress" id="progress">
+								<div class="progress_bar" id="progress_bar"></div>
+							</div>
+							<span class="progress_img" id="progress_img"><img  src="../../img/location.png"/></span>
+							<span class="progress_reset"><a href="javascript:location_reset();">格式化操作</a></span>
+							<span class="progress_info">
+								<label id="progress_info_loca">0</label><label>GB可用，共7GB</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<label>
+									正常/异常
+								</label>								
+							</span>
+						</div>
+						<!--第二行-->
+						<div class="con_system">
+							<label>系统维护：</label>
+							<div></div>
+						</div>
+
+						<!--第三行-->
+						<div class="con_product">
+							<div class="con_product_ip">
+								<label>当前启用设备IP：</label>
+								<div>
+									<input type="text" name="" id="" value="" />
+								</div>
+							</div>
+							<div class="con_product_name">
+								<label>设备名称：</label>
+								<div>
+									<input type="text" name="" id="" value="" />
+								</div>
+							</div>
+						</div>
+
+						<!--第四行-->
+						<div class="con_info">
+							<label>备注：</label>
+							<div>
+								<input type="text" name="" id="" value="" />
+							</div>
+						</div>
+
+						<!--第五行-->
+						<div class="con_button">
+							<button type="button" id="" class="con_button_reset">恢复出厂设置</button>
+							<button type="button" id="" class="con_button_restart">重启</button>
+						</div>
+					</div>
+				</div>
+				<div class="content-dis">
+					<div class="content_table">
+						<div class="content_table_button" style="margin-top: -30px;">
+							<button type="button" class="overall_button dotted_button"><img src="../../img/add.png" class="img_button"/> 添加</button>
+							<button type="button" class="overall_button dotted_button"><img src="../../img/delete.png" class="img_button"/> 删除</button>
+							<button type="button" class="overall_button dotted_button"><img src="../../img/edit.png" class="img_button"/> 修改</button>
+						</div>
+						<div class="face_table" style="margin-top: 20px;">
+							<div class="table">
+								<!--<form action="" method="post">-->
+								<table id="table1" style="line-height: 38px;">
+									<thead>
+										<tr style="background: #f1fbff;vertical-align: middle;">
+											<th width="84px">
+												<label class="checkbox" style="position: relative;top:1px;">
+								    				<input type="checkbox"/>
+								    					<i></i>
+												</label>
+											</th>
+											<th width="121px">序号</th>
+											<th width="189px">姓名</th>
+											<th width="139px">性别</th>
+											<th width="700px">身份证号</th>
+											<th>详细信息</th>
+										</tr>
+									</thead>
+
+									<tbody id="table2">
+										<!--添加表内容-->
+									</tbody>
+
+									<tfoot id="table3">
+										<tr>
+											<td colspan="6" id="span_nums">
+												<span id="spanFirst">首页</span>
+												<span id="spanPre">上页</span>
+												<span id="spanNext">下页</span>
+												<span id="spanPageNum"></span>/
+												<span id="spanTotalPage"></span>
+												<span>	<input style="width: 40px;" type="text" id="input_num" value="" /></span>
+												<span id="step_input_num">
+														<a href="#">转到</a>
+													</span>
+
+												<span id="spanLast">尾页</span>
+
+											</td>
+										</tr>
+									</tfoot>
+								</table>
+
+								<!--</form>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<!--js代码-->
+	<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/xcConfirm.js"></script>
+	<script src="../../js/dialog.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		//格式化操作，将本地存储值设为0
+		function location_reset() {
+			document.getElementById('progress_img').style.left = 0;
+			document.getElementById('progress_bar').style.width = 0;
+			document.getElementById('progress_info_loca').innerHTML = 0;
+		}
+
+		/*表格隔行变色*/
+		var oTab1 = document.getElementById('table1');
+		for(var i = 0; i < oTab1.tBodies[0].rows.length; i++) {
+			if(i % 2) {
+				oTab1.tBodies[0].rows[i].style.background = 'rgb(255,255,255)';
+			} else {
+				oTab1.tBodies[0].rows[i].style.background = 'rgb(248,248,248)';
+			}
+		}
+
+		/*for循环添加数据*/
+		function addData() {
+			for(var i = 1; i <= 600; i++) {
+				//增加一行
+				var oTr = document.createElement('tr');
+				//增加第一列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = '<label class="checkbox"><input type="checkbox" id=""/><i></i></label>';
+				oTr.appendChild(oTd);
+				//增加第二列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = 'VR201700' + i;
+				oTr.appendChild(oTd);
+				//增加第三列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = '张三' + i;
+				oTr.appendChild(oTd);
+				//增加第四列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = '******' + i;
+				oTr.appendChild(oTd);
+				//增加第五列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = '工号1010使用中';
+				oTr.appendChild(oTd);
+				//增加第六列
+				var oTd = document.createElement('td');
+				oTd.innerHTML = '<a class="tab-update">修改</a>&nbsp;&nbsp;<a class="tab-delete">删除</a>';
+				oTr.appendChild(oTd);
+				//增加一行至表格中
+				oTab1.tBodies[0].appendChild(oTr);
+			}
+		}
+		addData();
+
+		/*给删除添加点击事件*/
+		$('.tab-delete').click(function() {
+			$(this.parentNode.parentNode).remove();
+		});
+
+		/*给修改添加点击事件*/
+		$('.tab-update').click(function() {
+
+		});
+
+		/*全选*/
+		function initTableCheckbox() {
+			var $thr = $('table thead tr');
+			var $checkAll = $thr.find('label');
+			var $tbr = $('table tbody tr');
+			/*设置表头的第一个多选按钮作为全选或者反选按钮*/
+			$checkAll.click(function(event) {
+				$('tbody').find('input').prop('checked', true);
+				event.stopPropagation();
+			});
+			/*点击全选框单元格时，也会触发全选框的点击操作*/
+			$('table thead tr th').click(function() {
+				$(this).find('label').click();
+			});
+			/*点击每一行的选中复选框时*/
+			$tbr.find('label').click(function(event) {
+				$checkAll.prop('checked', $('tbody').find('input:checked').length == $tbr.length ? true : false);
+				event.stopPropagation();
+			});
+			/*点击每一行时也触发该行的选中操作*/
+			$tbr.click(function() {
+				$(this).find('label').click();
+			});
+		}
+		initTableCheckbox();
+
+		/*分页功能开始*/
+
+		//增加显示得页码个数，并跳转到指定页面
+		function step_num(count) {
+			$("#span_nums").attr("length", '0');
+			for(var i = 1; i < count + 1; i++) {
+				if(i == 1) {
+					$("#spanNext").before($('<span id="num' + i + '" ><a id="' + i + '" class="table_active"  href="javascript:numPage(' + (i - 1) + ');">' + '&nbsp;' + i + '&nbsp;' + '</a></span>'));
+				} else {
+					$("#spanNext").before($('<span id="num' + i + '" ><a id="' + i + '" href="javascript:numPage(' + (i - 1) + ');">' + '&nbsp;' + i + '&nbsp;' + '</a></span>'));
+					if(i > 8) {
+						$('tfoot tr td span')[i + 1].style.display = 'none';
+					}
+				}
+
+			}
+			$("#spanNext").before($('<span> ... </span>'));
+		}
+
+		var theTable = document.getElementById("table2");
+		var totalPage = document.getElementById("spanTotalPage");
+		var pageNum = document.getElementById("spanPageNum");
+		var spanPre = document.getElementById("spanPre");
+		var spanNext = document.getElementById("spanNext");
+		var second = document.getElementById("second");
+
+		var spanFirst = document.getElementById("spanFirst");
+		var spanLast = document.getElementById("spanLast");
+		var numberRowsInTable = theTable.rows.length;
+		var pageSize = 10; //页面显示数据的条数
+		var page = 1;
+		var now = 0;
+
+		//下一页
+		function nextPage() {
+			hideTable();
+			currentRow = pageSize * page;
+			maxRow = currentRow + pageSize;
+			if(maxRow > numberRowsInTable) maxRow = numberRowsInTable;
+			for(var i = currentRow; i < maxRow; i++) {
+				theTable.rows[i].style.display = '';
+			}
+			page++;
+			if(maxRow == numberRowsInTable) {
+				nextText();
+				lastText();
+			}
+			showPage();
+			preLink();
+			firstLink();
+		}
+
+		function numPage(page) { //跳转到指定页面，page接收点击的值
+			hideTable();
+			currentRow = pageSize * page;
+			maxRow = currentRow + pageSize;
+			if(maxRow > numberRowsInTable) maxRow = numberRowsInTable;
+			for(var i = currentRow; i < maxRow; i++) {
+				theTable.rows[i].style.display = '';
+			}
+			//跳转到指定页面时，页码颜色样式变化
+			for(var j = 1; j < totalPage.innerHTML; j++) {
+				document.getElementById(j).className = '';
+			}
+			document.getElementById(page + 1).className = 'table_active';
+
+			page++;
+			if(maxRow == numberRowsInTable) {
+				nextText();
+				lastText();
+			}
+			showPage();
+			preLink();
+			firstLink();
+		}
+
+		/*跳转到指定页面*/
+		var input_num = document.getElementById('input_num');
+		var step_input_num = document.getElementById('step_input_num');
+		/*跳转的点击事件*/
+		step_input_num.onclick = function() {
+			if(input_num.innerHTML != 0) {
+				var getnum = input_num.value - 1;
+				numPage(getnum);
+			}
+		};
+		/*输入框的键盘的回车事件*/
+		input_num.onkeydown = function(ev) {
+			var oEvent = ev || event;
+			if(oEvent.keyCode == 13 && input_num.innerHTML != 0) {
+				var getnum = input_num.value - 1;
+				numPage(getnum);
+			}
+		};
+
+		//上一页
+		function prePage() {
+			hideTable();
+
+			page--;
+
+			currentRow = pageSize * page;
+			maxRow = currentRow - pageSize;
+			if(currentRow > numberRowsInTable) currentRow = numberRowsInTable;
+			for(var i = maxRow; i < currentRow; i++) {
+				theTable.rows[i].style.display = '';
+			}
+
+			if(maxRow == 0) {
+				preText();
+				firstText();
+			}
+			showPage();
+			nextLink();
+			lastLink();
+		}
+
+		//第一页
+		function firstPage() {
+			hideTable();
+			//				page = 1;
+			for(var i = 0; i < pageSize; i++) {
+				theTable.rows[i].style.display = '';
+			}
+			showPage();
+			firstText();
+			preText();
+			nextLink();
+			lastLink();
+		}
+
+		//最后一页
+		function lastPage() {
+			hideTable();
+			page = pageCount();
+			currentRow = pageSize * (page - 1);
+			for(var i = currentRow; i < numberRowsInTable; i++) {
+				theTable.rows[i].style.display = '';
+			}
+			showPage();
+			preLink();
+			nextText();
+			firstLink();
+			lastText();
+		}
+
+		function hideTable() {
+			for(var i = 0; i < numberRowsInTable; i++) {
+				theTable.rows[i].style.display = 'none';
+			}
+		}
+
+		function showPage() {
+			pageNum.innerHTML = page;
+		}
+
+		//总共页数
+		function pageCount() {
+			var count = 0;
+			if(numberRowsInTable % pageSize != 0) count = 1;
+			return parseInt(numberRowsInTable / pageSize) + count;
+		}
+
+		//显示链接
+		function preLink() {
+			spanPre.innerHTML = "<a href='javascript:prePage();'>上页</a>";
+		}
+
+		function preText() {
+			spanPre.innerHTML = "上页";
+		}
+
+		function nextLink() {
+			spanNext.innerHTML = "<a href='javascript:nextPage();'>下页</a>";
+		}
+
+		function nextText() {
+			spanNext.innerHTML = "下页";
+		}
+
+		function firstLink() {
+			spanFirst.innerHTML = "<a href='javascript:firstPage();'>首页</a>";
+		}
+
+		function firstText() {
+			spanFirst.innerHTML = "首页";
+		}
+
+		function lastLink() {
+			spanLast.innerHTML = "<a href='javascript:lastPage();'>尾页</a>";
+		}
+
+		function lastText() {
+			spanLast.innerHTML = "尾页";
+		}
+
+		//只显示第一页的数据
+		function showfirstPage() {
+			for(var i = pageSize; i < numberRowsInTable; i++) {
+				theTable.rows[i].style.display = 'none';
+			}
+			var count = pageCount();
+			totalPage.innerHTML = pageCount();
+			pageNum.innerHTML = '1';
+			step_num(count);
+			nextLink();
+			lastLink();
+		}
+		showfirstPage();
+
+		/*分页功能结束*/
+
+		window.onload = function() {
+
+			var oProgress_img = document.getElementById('progress_img');
+			var oProgress = document.getElementById('progress');
+			var oProgress_bar = document.getElementById('progress_bar');
+			var oNumber_input = document.getElementById('progress_info_loca');
+			var disX = 0; //X轴方向的距离只要左右可以拖动
+			oProgress_img.onmousedown = function(ev) {
+				var oEvent = ev || event;
+				disX = oEvent.clientX - oProgress_img.offsetLeft;
+				if(oProgress_img.setCapture) { //IE
+					oProgress_img.onmousemove = mouseMove;
+					oProgress_img.onmouseup = mouseUp;
+					oProgress_img.setCapture(); //事件捕获，将整个浏览器的焦点都放在div上
+
+				} else { //chrome FF
+					document.onmousemove = mouseMove;
+					document.onmouseup = mouseUp;
+				}
+
+				function mouseMove(ev) {
+					var oEvent = ev || event;
+
+					var l = oEvent.clientX - disX - 20;
+					if(l < 0) {
+						l = 0;
+					} else if(l > oProgress.offsetWidth - oProgress_img.offsetWidth) {
+						l = oProgress.offsetWidth - oProgress_img.offsetWidth;
+					}
+					for(var i = 1; i < 15; i++) {
+						oProgress_img.style.left = l + i + 'px';
+					}
+					//oProgress_img.style.left = l + 'px';
+					var scale = l / (oProgress.offsetWidth - oProgress_img.offsetWidth);
+					oNumber_input.innerHTML = Math.round(scale * 7);
+					oProgress_bar.style.width = 340 * scale + 'px';
+				}
+
+				function mouseUp() {
+					this.onmousemove = null;
+					this.onmouseup = null;
+					if(releaseCapture) {
+						oProgress_img.releaseCapture(); //取消事件捕获
+					}
+
+				}
+				return false; //防止 chrome IE9 firefox浏览器的bug
+			};
+
+		}
+	</script>
+
+</html>

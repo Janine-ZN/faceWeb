@@ -1,0 +1,195 @@
+body {
+	background: #FFFFFF;
+	padding: 0px;
+	margin: 0px;
+	font-size: 100%;
+	font-family: "微软雅黑";
+}
+
+.img-bg {
+	background: rgb(8, 57, 155);
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.img-bg img {
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.img-logo {
+	position: absolute;
+	top: 170px;
+	left: 45%;
+}
+
+span:first-of-type {
+	position: relative;
+	left: 10px;
+	top: 3px;
+}
+
+.img-logo .name-text label {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	line-height: 30px;
+	font-size: 24px;
+	color: #FFFFFF;
+	background-color: transparent;
+}
+
+.img-timg {
+	position: fixed;
+	top: 320px;
+	left: 20%;
+}
+
+
+/*用户表单样式*/
+
+.article {
+	position: fixed;
+	top: 410px;
+	left: 35%;
+}
+.form-inline {
+	position: absolute;
+	top: 42%;
+	left: 30%;
+	height: 100px;
+	width: 1000px;
+}
+
+.article .form-inline .form-group .bor-username {
+	position: absolute;
+	top: 35px;
+	left: ;
+	width: 170px;
+	height: 40px;
+	border: 1.5px dashed #8e8e8e;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+.article .form-inline .form-group .bor-username label {
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color: #8e8e8e;
+	position: relative;
+	top: -15px;
+	left: 15px;
+	background: #FFFFFF;
+}
+
+.article .form-inline .form-group .bor-username input {
+	border: none;
+	position: relative;
+	top: 0px;
+	left: 7px;
+}
+
+.article .form-inline .form-group .bor-passwprd {
+	position: absolute;
+	top: 35px;
+	left: 200px;
+	width: 170px;
+	height: 40px;
+	border: 1.5px dashed #8e8e8e;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+.article .form-inline .form-group .bor-passwprd label {
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color: #8e8e8e;
+	position: relative;
+	top: -15px;
+	left: 15px;
+	background: #FFFFFF;
+}
+
+.article .form-inline .form-group .bor-passwprd input {
+	border: none;
+	position: relative;
+	top: 0px;
+	left: 7px;
+}
+
+.article .form-inline #login {
+	position: relative;
+	top: -35px;
+	left: 250px;
+	width: 93px;
+	height: 36px;
+	background-color: #155cec;
+	font-size: 14px;
+	color: #FFFFFF;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+.article .form-inline #reset {
+	position: relative;
+	top: -70px;
+	left: 370px;
+	width: 93px;
+	height: 36px;
+	font-size: 14px;
+	color: #155cec;
+	border: 1.5px #155cec dashed;
+	background: #FFFFFF;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+.article .form-inline #remember {
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color: #155cec;
+	position: relative;
+	top: 40px;
+	left: 710px;
+}
+
+#remember img {
+	position: relative;
+	right: -10px;
+	top: 2px;
+}
+
+.article .form-inline #forget {
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color: #155cec;
+	position: relative;
+	top: 40px;
+	left: 730px;
+}
+
+#forget img {
+	position: relative;
+	right: -10px;
+	top: 2px;
+}
+
+.img-footer {
+	position: relative;
+	top: 80px;
+	left: -170px;
+}

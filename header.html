@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>寰景信息科技</title>
+		<link rel="stylesheet" href="css/header_menu.css" />
+	</head>
+	<script type="text/javascript">
+		window.onload = function() {
+
+			var ofirst_ul = document.getElementById('first_ul');
+			var aLi = ofirst_ul.getElementsByTagName('li');
+			var now = 0;
+
+			for(var i = 0; i < aLi.length; i++) {
+				aLi[i].index = i;
+				aLi[i].onclick = function() {
+					now = this.index;
+					tab();
+				}
+			}
+
+			function tab() { //为每个li标签添事件，给鼠标当前点击的添加样式
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].className = '';
+				}
+				aLi[now].className = 'active';
+			}
+		}
+	</script>
+
+	<body>
+		<div id="nav_header">
+			<div id="header_logo">
+				<div style="float: left;">
+					<img src="img/vr.png" />
+				</div>
+				<div id="" style="float: left;margin-top: 5px;margin-left: -5px;">
+					<img src="img/logo.png" style="" />
+				</div>
+
+			</div>
+			<div id="nav">
+				<ul id="first_ul">
+					<li class="active" id="view">
+						<a href="view.html" target="below">视频预览</a>
+					</li>
+					<li id="application">
+						<a href="facepic.html" target="below">人脸抓拍</a>
+					</li>
+					<li id="configuration">
+						<a href="faceset.html" target="below">人脸库配置</a>
+					</li>
+					<li>
+						<a href="set/set_main.html" id="setting" target="below">系统设置</a>
+					</li>
+				</ul>
+			</div>
+			<div id="header_admin">
+				<div style="margin-top: 4px;margin-left: 10px;text-align: center;">
+					<img src="img/admin_logo.png" style="margin-left: -12px;" />
+					<font style="margin-left: 5px;">admin</font>
+					<a href="login.html" target="_parent">
+						<img src="img/logout.png" style="margin-left: 20px;" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

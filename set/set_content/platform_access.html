@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" href="../../css/tab_ switch.css" />
+		<link rel="stylesheet" href="../../css/platfrom.css" />
+	</head>
+
+	<body>
+		<div class="main">
+			<input type="radio" id="tab-1" name="show" checked/>
+			<div class="tab">
+				<label for="tab-1">平台接入</label>
+			</div>
+			<div class="content">
+				<div class="content-dis" id="platform_jump">
+					<div id="video_jump" class="video_jump">
+						<form action="" method="post">
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;平台选择：</label>
+								<span name="" id="jump_plat_select">寰景人脸布控系统</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;协议版本：</label>
+								<span name="" id="jump_editiont_select">GB/T28181-2011</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;本地SIP端口：</label>
+								<span name="" id="jump_input_1">8080</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;SIP服务器ID：</label>
+								<span name="" id="jump_input_2">1920</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;SIP服务域：</label>
+								<span name="" id="jump_input_3">***</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;SIP服务器地址：</label>
+								<span name="" id="jump_input_4">***</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;SIP服务器端口：</label>
+								<span name="" id="jump_input_5">25</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;SIP用户名：</label>
+								<span name="" style="width: 40px;" id="jump_input_6">4096</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;SIP用户认证ID：</label>
+								<span name="" id="jump_input_7">264</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：</label>
+								<span name="" id="jump_input_8">***</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码确认：</label>
+								<span name="" id="jump_input_9">***</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;注册有效期：</label>
+								<span name="" id="jump_input_10">2018-10-11</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册状态：</label>
+								<span name="" id="jump_state_select">不在线</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心跳周期：</label>
+								<span name="" id="jump_input_11">60</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;28181码流检索：</label>
+								<span name="" id="jump_bit_rate_select">高清流</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">最大心跳超时次数：</label>
+								<span name="" id="jump_input_12">5</span>
+							</div>
+							<div class="jump_frame">
+								<input class="platform_update_btn" id="platform_update_btn" type="button" name="" value="修改" />
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<div class="con" id="platform">
+					<form action="" method="post">
+						<div>
+							<label class="plat">平台选择：</label>
+							<select class="plat_select" id="plat_select">
+								<option style="text-align: right;" value="寰景人脸布控系统">寰景人脸布控系统</option>
+							</select>
+							<a class="set" href="#">点击设置</a>
+						</div>
+						<div>
+							<label class="edition">协议版本：</label>
+							<select class="editiont_select" id="editiont_select">
+								<option value="0">GB/T28181-2011</option>
+							</select>
+							<label class="port">本地SIP端口：</label>
+							<input class="port_input" id="input_1" type="text" name="" />
+						</div>
+						<div>
+							<label class="server">SIP服务器ID：</label>
+							<input class="server_input" id="input_2" type="text" name="" />
+							<label class="server_domain">SIP服务器域：</label>
+							<input class="server_domain_input" id="input_3" type="text" name="" />
+						</div>
+						<div>
+							<label class="server_ad">SIP服务器地址：</label>
+							<input class="server_ad_input" id="input_4" type="text" name="" />
+							<label class="server_port">SIP服务器端口：</label>
+							<input class="server_port_input" id="input_5" type="text" name="" />
+						</div>
+						<div>
+							<label class="SIP_name">SIP用户名：</label>
+							<input class="SIP_name_input" id="input_6" type="text" name="" />
+							<label class="SIP_ID">SIP用户认证ID：</label>
+							<input class="SIP_ID_input" id="input_7" type="text" name="" />
+						</div>
+						<div>
+							<label class="password">密码：</label>
+							<input class="password_input" id="input_8" type="password" name="" />
+							<label class="password_again">密码确认：</label>
+							<input class="password_again_input" id="input_9" type="password" name="" />
+						</div>
+						<div>
+							<label class="validity">注册有效期：</label>
+							<input class="validity_input" id="input_10" type="text" name="" />
+							<label class="state">注册状态：</label>
+							<select class="state_select" id="state_select">
+								<option style="text-align: right;" value="不在线">不在线</option>
+								<option style="text-align: right;" value="在线">在线</option>
+							</select>
+						</div>
+						<div>
+							<label class="period">心跳周期：</label>
+							<input class="period_input" id="input_11" type="text" name="" />
+							<label class="bit_rate">28181码流索引：</label>
+							<select class="bit_rate_select" id="bit_rate_select">
+								<option style="text-align: right;" value="高清流">高清流</option>
+								<option style="text-align: right;" value="低清流">低清流</option>
+							</select>
+						</div>
+						<div>
+							<label class="overtime">最大心跳超时次数：</label>
+							<input class="overtime_input" id="input_12" type="text" name="" />
+						</div>
+						<div>
+							<input class="save" id="platform_save_btn" type="button" name="" value="填写好了，现在保存" />
+							<input class="reset" type="reset" name="" value="重置" />
+						</div>
+					</form>
+				</div>
+			</div>
+
+	</body>
+	<script>
+		window.onload = function() {
+
+			var platform_update_btn = document.getElementById("platform_update_btn");
+			var platform_save_btn = document.getElementById("platform_save_btn");
+			var platform_jump = document.getElementById("platform_jump");
+			var platform = document.getElementById("platform");
+
+			platform_update_btn.onclick = function() {
+
+				platform_jump.style.display = "none";
+				// 点击修改按钮，传值
+				for(var i = 1; i <= 12; i++) {
+					document.getElementById('input_' + i).value = document.getElementById("jump_input_" + i).innerText;
+				}
+
+				platform.style.display = "block";
+			}
+			platform_save_btn.onclick = function() {
+				platform.style.display = "none";
+				platform_jump.style.display = "block";
+			}
+		}
+	</script>
+
+</html>

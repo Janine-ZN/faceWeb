@@ -1,0 +1,126 @@
+* {
+			margin: 0;
+			padding: 0;
+		}
+html{
+			background-color: #dfebef;
+		}
+.main {
+	margin-left: 1px;
+	margin-top: 1px;
+	width: 99.9%;
+	height: 800px;
+}
+
+
+/*第一个tab*/
+
+.main input[type=radio] {
+	display: none;
+}
+
+.tab {
+	overflow: hidden;
+}
+
+.tab label {
+	font-size: 18px;
+	cursor: pointer;
+	float: left;
+	color: #155cec;
+	width: 120px;
+	height: 25px;
+	text-align: center;
+	padding: 15px 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+
+/*主体：可在里面添加自己的内容*/
+
+.content {
+	background-color: white;
+	position: absolute;
+	width: 99.9%;
+	height: 800px;
+}
+
+.content>div {
+	padding: 30px;
+	line-height: 1.5;
+	font-size: 17px;
+	display: none;
+}
+
+
+/*Janine：视频设置tab点击前和点击后的变化*/
+
+
+/*************************************显示设置  OSD管理*************************************/
+
+#tab_display:checked~.tab label:nth-child(1),
+#tab_osd:checked~.tab label:nth-child(2) {
+	color: #155cec;
+	width: 120px;
+	height: 48px;
+	background-color: white;
+	box-shadow: none;
+}
+
+#tab_display:checked~.content div:nth-child(1),
+#tab_osd:checked~.content div:nth-child(2) {
+	display: block;
+}
+
+
+/*************************************视频设置  摄像机管理**************************************/
+
+#video_settings:checked~.tab label:nth-child(1),
+#pm:checked~.tab label:nth-child(2) {
+	color: #155cec;
+	width: 120px;
+	height: 25px;
+	background-color: white;
+	box-shadow: none;
+}
+
+#video_settings:checked~.content div:nth-child(1),
+#pm:checked~.content div:nth-child(2) {
+	display: block;
+}
+
+
+/************************************平台接入*************************************/
+
+#tab-1:checked~.tab label:nth-child(1) {
+	color: #155cec;
+	width: 100px;
+	height: 20px;
+	background-color: white;
+	box-shadow: none;
+}
+
+#tab-1:checked~.content div:nth-child(1) {
+	display: block;
+}
+
+
+/*************************************摄像机维护  用户管理*************************************/
+
+#video_maintenance:checked~.tab label:nth-child(1),
+#pm:checked~.tab label:nth-child(2) {
+	color: #155cec;
+	width: 120px;
+	height: 25px;
+	background-color: white;
+	box-shadow: none;
+}
+
+#video_maintenance:checked~.content div:nth-child(1),
+#pm:checked~.content div:nth-child(2) {
+	display: block;
+}

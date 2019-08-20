@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../css/basicinfo.css" />
+
+	</head>
+
+	<body>
+		<div class="tab" id="network_div">
+			<div class="tab-header clear">
+				<ul>
+					<li class="selected first_li" id="one">
+						<span>TCP/IP</span>
+					</li>
+					<li class="selected" id="two">
+						<span>DDNS</span>
+					</li>
+					<li class="selected" id="three">
+						<span>PPPoE</span>
+					</li>
+					<li class="selected" id="four">
+						<span>端口</span>
+					</li>
+					<li class="selected" id="five">
+						<span>映射</span>
+					</li>
+				</ul>
+			</div>
+			<!--主要内容-->
+			<div class="tab-content">
+				<div class="content" id="content_first" style="display: none;">
+					<form action="" method="post">
+						<ul>
+							<li>
+								<div class="radius row_one " id="net_type">
+									<span class="li_span">网卡类型：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="select_checkbox">
+									<label for="auto_get" class='checkbox'>自动获取
+				                <input type="checkbox" id='auto_get' /><i></i>  
+				            	</label>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_three ">
+									<span class="li_span">设备IPV4地址：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">IPV4子网掩码：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">IPV4默认网关：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_one ">
+									<span class="li_span">IPV6模式：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<input type="button" value="查看路由公告" class="route_button" />
+							</li>
+							<li>
+								<div class="radius row_three ">
+									<span class="li_span">设置IPV6地址：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">IPV6子网掩码：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">IPV6默认网关：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_three ">
+									<span class="li_span">物理地址：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">MTU：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three ">
+									<span class="li_span">多播地址：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<!---->
+							<li>
+								<div class="radius row_two ">
+									<span class="li_span">首选DNS服务器：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_two ">
+									<span class="li_span">备用DNS服务器：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<input type="button" name="" class="save" value="填写好了，现在保存" />
+								<input type="reset" class="reset" value="重置" />
+							</li>
+						</ul>
+
+					</form>
+				</div>
+				<!--222222222222222222222222222222222222222222222222222222-->
+				<div class="content" id="content_second" style="display:none;">
+					<form action="" method="post">
+						<ul>
+							<li>
+								<div class="select_checkbox">
+									<label for="get_ddns" class='checkbox'>启用DDNS
+				                <input type="checkbox" id='get_ddns' /><i></i>  
+				            </label>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">DDNS类型：</span>
+									<select>
+										<option>DynDNS</option>
+										<option>NO-IP</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_two">
+									<span class="li_span">服务器地址：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_two">
+									<span class="li_span">域名：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_three">
+									<span class="li_span">用户名：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three">
+									<span class="li_span">密码：</span>
+									<input type="text" value="" />
+								</div>
+								<div class="radius row_three">
+									<span class="li_span">密码确认：</span>
+									<input type="text" value="" />
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">端口：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<!---->
+
+							<li>
+								<input type="button" name="" class="save" value="填写好了，现在保存" />
+								<input type="reset" class="reset" value="重置" />
+							</li>
+						</ul>
+
+					</form>
+				</div>
+				<!--3333333333333333333333333333333333333333333-->
+				<div class="content" id="content_third" style="display:none;">
+					<form action="" method="post">
+						<ul>
+							<li>
+								<div class="select_checkbox">
+									<label for="get_pppoe" class='checkbox'>启用PPPoE
+				                <input type="checkbox" id='get_pppoe' /><i></i>  
+				            </label>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">设备动态IP：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius row_three">
+									<span class="li_span">用户名：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+								<div class="radius row_three">
+									<span class="li_span">密码：</span>
+									<input type="text" value="" />
+								</div>
+								<div class="radius row_three">
+									<span class="li_span">密码确认：</span>
+									<input type="text" value="" />
+								</div>
+							</li>
+							<li>
+								<input type="button" name="" class="save" value="填写好了，现在保存" />
+								<input type="reset" class="reset" value="重置" />
+							</li>
+						</ul>
+
+					</form>
+				</div>
+				<!--44444444444444444444444444444444444444-->
+				<div class="content" id="content_fourth" style="display: none;">
+					<form action="" method="post">
+						<ul>
+							<li>
+								<div class="radius">
+									<span class="li_span">HTTP端口：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">RTSP端口：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">HTTPS端口：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">服务端口：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+
+							<li>
+								<input type="button" name="" class="save" value="填写好了，现在保存" />
+								<input type="reset" class="reset" value="重置" />
+							</li>
+						</ul>
+
+					</form>
+				</div>
+				<!--5555555555555555555555555555555555555555555555555-->
+				<div class="content" id="content_fifth" style="display:none">
+					<form action="" method="post">
+						<ul>
+							<li>
+								<div class="select_checkbox">
+									<label for="get_upnp" class='checkbox'>启用DDNS
+				                <input type="checkbox" id='get_upnp' /><i></i>  
+				            </label>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">别名：</span>
+									<input type="text" value="" class="input_get"/>
+								</div>
+							</li>
+							<li>
+								<div class="radius">
+									<span class="li_span">端口映射方式：</span>
+									<select>
+										<option>自动</option>
+										<option>手动</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<input type="button" name="" class="save" value="填写好了，现在保存" />
+								<input type="reset" class="reset" value="重置" />
+							</li>
+						</ul>
+						<table class="map_table">
+							<tr>
+								<th class="first_th">端口类型</th>
+								<th class="second_th">外部端口</th>
+								<th class="third_th">外部IP地址</th>
+								<th class="forth_th">内部端口</th>
+								<th class="fifth_th">状态</th>
+							</tr>
+							<tr>
+								<td>HTTP</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="rtsp">RTSP</td>
+								<td class="rtsp"></td>
+								<td class="rtsp"></td>
+								<td class="rtsp"></td>
+								<td class="rtsp"></td>
+							</tr>
+							<tr>
+								<td>服务端口</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<!--one--------------------------------------------------13--------->
+				 <div class="content clear" id="tcp_change" style="display:block;">
+					<ul class="ul_left">
+						<li><span class="span_left">网卡类型：</span><span class="span_right span_get">自适应</span></li>
+						<li><span class="span_left">设备IPV4地址：</span><span class="span_right span_get">192.168.10.122</span></li>
+						<li><span class="span_left">IPV4子网掩码：</span><span class="span_right span_get">225.225.225.0</span></li>
+						<li><span class="span_left">IPV4默认网关：</span><span class="span_right span_get">192.168.10.0</span></li>
+						<li><span class="span_left">IPV6模式：</span><span class="span_right span_get">路由公告</span></li>
+						<li><span class="span_left">设置IPV6地址：</span><span class="span_right span_get">192.168.10.122</span></li>
+						<li><span class="span_left">IPV6子网掩码：</span><span class="span_right span_get">255.255.255.0</span></li>
+						<input type="button" id="tcp_button" class="change_button" value="修改" />
+					</ul>
+					<ul class="ul_right">
+						<li><span class="span_left">IPV6默认网关：</span><span class="span_right span_get">192.168.10.1</span></li>
+						<li><span class="span_left">物理地址：</span><span class="span_right span_get">00-30-67-3F-7C-90</span></li>
+						<li><span class="span_left">MTU：</span><span class="span_right span_get">1500</span></li>
+						<li><span class="span_left">多播地址：</span><span class="span_right span_get">192.168.10.1</span></li>
+						<li><span class="span_left">首选DNS服务器：</span><span class="span_right span_get">8:8:8:8</span></li>
+						<li><span class="span_left">备用DNS服务器：</span><span class="span_right span_get">8:8:8:8</span></li>
+						
+					</ul>
+					
+					
+			</div>
+			<!--two------------------------------------------------------4----->
+				 <div class="content clear" id="ddns_change" style="display:none;">
+					<ul class="ul_left">
+						<li><span class="span_left">DDNS类型：</span><span class="span_right">DynDNS</span></li>
+						<li><span class="span_left">服务器地址：</span><span class="span_right span_get">8:8:8:8</span></li>
+						<li><span class="span_left">域名：</span><span class="span_right span_get">www.wwww.com</span></li>
+						<li><span class="span_left">用户名：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">端口：</span><span class="span_right span_get">0</span></li>
+						<input type="button" id="ddns_button" class="change_button" value="修改" />
+					</ul>
+					
+					
+			</div>
+			<!--three-----------------------------------------------------2------>
+				 <div class="content clear" id="pppoe_change" style="display:none;">
+					<ul class="ul_left">
+						<li><span class="span_left">设备动态IP：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">用户名：</span><span class="span_right span_get"></span></li>
+						<input type="button" id="pppoe_button" class="change_button" value="修改" />
+					</ul>				
+			</div>
+			<!--four------------------------------------------------------4----->
+				 <div class="content clear" id="port_change" style="display:none;">
+					<ul class="ul_left">
+						<li><span class="span_left">HTTP端口：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">RTSP端口：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">HTTPS端口：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">服务端口：</span><span class="span_right span_get"></span></li>
+						<input type="button" id="port_button" class="change_button" value="修改" />
+					</ul>
+					
+					
+			</div>
+			<!--five---------------------------------------------------2-------->
+				 <div class="content clear" id="map_change" style="display:none;">
+					<ul class="ul_left">
+						<li><span class="span_left">别名：</span><span class="span_right span_get"></span></li>
+						<li><span class="span_left">端口映射方式：</span><span class="span_right"></span></li>
+						<input type="button" id="map_button" class="change_button" value="修改" />
+					</ul>				
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/network.js"></script>
+
+	</body>
+
+</html>

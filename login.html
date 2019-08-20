@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>寰景信息</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				var ologin = document;
+			}
+			$(document).ready(function() {
+				// 简单的登录事件
+				$('#login').click(function() {
+					$('#login').css('background', '#29aafe');
+					//判断输入框
+					if($('#uesrname').val() == ""){
+						alert('用户名不为空');
+						$('#login').css('background', '#155CEB');
+					}
+					else if($('#password').val() == ""){
+						alert('密码不为空');
+						$('#login').css('background', '#155CEB');
+					}
+					else{
+						window.location.href="main.html"; 
+					}
+					
+				});
+				$('#reset').click(function() {
+					$('#reset').css({
+						'border-color': '#29aafe',
+						'color': '#29aafe'
+					});
+				});
+
+				$("#img-up-re").click(function() {
+					$("#img-up-re").hide();
+					$("#img-on-re").show();
+				});
+				$("#img-on-re").click(function() {
+					$("#img-on-re").hide();
+					$("#img-up-re").show();
+				});
+				$("#img-up-for").click(function() {
+					$("#img-up-for").hide();
+					$("#img-on-for").show();
+				});
+				$("#img-on-for").click(function() {
+					$("#img-on-for").hide();
+					$("#img-up-for").show();
+				});
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<!--头部logo及图片开始-->
+		<div class="header">
+			<div class="img-bg">
+				<img src="img/login/jianbian.png" />
+			</div>
+			<div class="img-logo">
+				<span><img src="img/vr.png"/></span>
+				<span><img src="img/view.png"/></span>
+				<div class="name-text">
+					<label>寰景人脸识别系统</label>
+				</div>
+			</div>
+			<div class="img-timg">
+				<img src="img/login/timg.png" />
+			</div>
+		</div>
+		<!--头部logo及图片结束-->
+
+		<!--登录部分表单开始-->
+		<div class="article">
+			<div class="form-inline">
+				<form action="" method="post">
+					
+					<div class="form-group" ><!--style="background-image: url(img/login/username.png) ;background-repeat:no-repeat;position: relative; top: 29px; left: ;"-->
+						<div class="bor-username">
+						<label>用户名:</label>
+							<input class="form-control" type="text" id="uesrname" placeholder="输入用户名"  style="width:100px;"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="bor-passwprd">
+						<label>密码:</label>
+						<input class="form-control" type="password" id="password" placeholder="输入密码" style="width: 100px;/>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="button" id="login" value="登录" />
+						<input type="reset" id="reset" value="重置" />
+					</div>
+					<div class="form-group" id="remember">
+						<img id="img-up-re" src="img/unselected.png" />
+						<img style="display: none;" id="img-on-re" src="img/selected.png" />
+						<span>记住密码</span>
+					</div>
+					<div class="form-group" id="forget">
+						<img id="img-up-for" src="img/unselected.png" />
+						<img style="display: none;" id="img-on-for" src="img/selected.png" />
+						<span>自动登录</span>
+					</div>
+				</form>
+			</div>
+
+			<div class="img-footer">
+				<img src="img/login/login_bg.png"/>
+			</div>
+		</div>
+		<!--登录部分表单结束-->
+	</div>
+	</body>
+
+</html>

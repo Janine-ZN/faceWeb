@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" href="../../css/tab_ switch.css">
+		<link rel="stylesheet" href="../../css/video_manage.css" />
+		<script src="../../js/video_manage.js"></script>
+	</head>
+
+	<body>
+		<div class="main">
+			<input type="radio" id="video_settings" name="show" checked/>
+			<input type="radio" id="pm" name="show" />
+			<div class="tab">
+				<label for="video_settings">视频设置</label>
+				<label for="pm">摄像机管理</label>
+			</div>
+			<div class="content">
+				<div class="content-dis" id="test">
+					<div id="video_jump" class="video_jump">
+						<form action="" method="post">
+							<div class="jump_frame"><label class="jump-label">码流类型：</label>
+								<span name="" id="select_1">中清流</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">视频类型：</label>
+								<span name="" id="select_2">单合流</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;分辨率：</label>
+								<span name="" id="select_3">1920*1080</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">码率类型：</label>
+								<span name="" id="select_4">定码率</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">图片质量：</label>
+								<span name="" id="select_5">低</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">视频帧率：</label>
+								<span name="" id="select_6">25</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">码率上限：</label>
+								<span name="" style="width: 40px;" id="select_7">4096 Kbps</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">视频编码：</label>
+								<span name="" id="select_8">H.264</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">Smart&nbsp;264：</label>
+								<span name="" id="select_9">关闭</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">编码复杂度：</label>
+								<span name="" id="select_10">中</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;I帧间隔：</label>
+								<span name="" id="jump_frame_interval">10</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SVC：</label>
+								<span name="" id="select_11">关闭</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数值：</label>
+								<span name="" id="jump_number">0</span>
+							</div>
+							<div class="jump_frame">
+								<input class="video_update_btn" id="video_update_btn" type="button" name="" value="修改" />
+							</div>
+						</form>
+					</div>
+					<div class="con_video_management" id="con_video_management">
+						<form action="" method="post">
+							<div>
+								<label class="bitstream_type">码流类型：</label>
+								<select class="bitstream_type_select" id="jump_select_1">
+									<option value="高清流">高清流</option>
+									<option value="中清流">中清流</option>
+									<option value="低清流">低清流</option>
+								</select>
+								<label class="video_type">视频类型：</label>
+								<select class="video_type_select" id="jump_select_2">
+									<option value="复合流">复合流</option>
+									<option value="杂合流">杂合流</option>
+									<option value="单合流">单合流</option>
+								</select>
+							</div>
+							<div>
+								<label class="resolution">分辨率：</label>
+								<select class="resolution_select" id="jump_select_3">
+									<option value="1920*1080">1920*1080</option>
+								</select>
+								<label class="rate_type">码率类型：</label>
+								<select class="rate_type_select" id="jump_select_4">
+									<option value="定码率">定码率</option>
+								</select>
+							</div>
+							<div>
+								<label class="image_quality">图像质量：</label>
+								<select class="image_quality_select" id="jump_select_5">
+									<option value="高">高</option>
+									<option value="低">低</option>
+								</select>
+								<label class="video_frame_rate">视频帧率：</label>
+								<select class="video_frame_rate_select" id="jump_select_6">
+									<option value="25">25</option>
+								</select>
+							</div>
+							<div>
+								<label class="rate_upper_limit">码率上限：</label>
+								<select class="rate_upper_limit_select" id="jump_select_7">
+									<option value="4096">4096</option>
+								</select><span class="kbps">Kbps</span>
+								<label class="video_coding">视频编码：</label>
+								<select class="video_coding_select" id="jump_select_8">
+									<option value="H.264">H.264</option>
+								</select>
+							</div>
+							<div>
+								<label class="smart">Smart 264：</label>
+								<select class="smart_select" id="jump_select_9">
+									<option value="开启">开启</option>
+									<option value="关闭">关闭</option>
+								</select>
+								<label class="coding_complexity">编码复杂度：</label>
+								<select class="coding_complexity_select" id="jump_select_10">
+									<option value="中">中</option>
+								</select>
+							</div>
+							<div>
+								<label class="frame_interval">I帧间隔：</label>
+								<input class="frame_interval_input" id="frame_interval_input" type="text" name="" />
+								<label class="SVC">SVC：</label>
+								<select class="SVC_select" id="jump_select_11">
+									<option value="关闭">关闭</option>
+								</select>
+							</div>
+							<div>
+								<label class="bitstream_smoothing">码流平滑：</label>
+								<div class="progress" id="progress">
+									<div class="progress_bar" id="progress_bar"></div>
+									<span class="progress_img" id="progress_img">
+					                <img src="../../img/location.png"/></span>
+								</div>
+								<label class="number">数值：</label>
+								<input class="number_input" id="number_input" type="text" name="" />
+								<span class="clear_smooth"> 清晰<--->平滑</span>
+							</div>
+							<div>
+								<input class="save" id="video_save_btn" type="button" name="" value="填写好了，现在保存" />
+								<input class="reset" type="reset" name="" value="重置" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="content-dis" id="test_camera">
+					<div class="camera_jump" id="camera_jump">
+						<form action="" method="post">
+							<div class="jump_frame"><label class="jump-label">IP地址：</label>
+								<span name="" id="jump_con_1">127.0.0.2</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">端口号：</label>
+								<span name="" id="jump_con_2">8080</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">用户名：</label>
+								<span name="" id="jump_con_3">root</span>
+							</div>
+							<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;密码：</label>
+								<span type="password" name="" id="jump_con_4">******<span>
+							</div>
+							<div class="jump_frame">
+								<input class="camera_update_btn" id="camera_update_btn" type="button" name="" value="修改" />
+							</div>
+						</form>
+					</div>
+					<div class="con_camera" id="con_camera" style="display: none;">
+						<form action="" method="post">
+							<div>
+								<label class="con_camera_ip_ad">IP地址：</label>
+								<input class="con_camera_ip_ad_input" id="con_input_1" type="text" name="" />
+								<label class="con_camera_port">端口号：</label>
+								<input class="con_camera_port_input" id="con_input_2" type="text" name="" />
+							</div>
+							<div>
+								<label class="con_camera_username">用户名：</label>
+								<input class="con_camera_username_input" id="con_input_3" type="text" name="" />
+								<label class="con_camera_password">密码：</label>
+								<input class="con_camera_password_input" id="con_input_4" type="text" name="" />
+							</div>
+							<div>
+								<input class="con_camera_save" id="con_camera_save_btn" type="button" name="" value="填写好了，现在保存" />
+								<input class="con_camera_reset" type="reset" name="" value="重置" />
+								<input class="con_camera_start" type="checkbox" name="" value="启用">
+								<input class="con_camera_frame" type="button" name="" value="启用" />
+							</div>
+						</form>
+					</div>
+				</div>
+				
+					
+					
+				</div>
+
+	</body>
+	<script>
+		window.onload = function() {
+
+			var oProgress_img = document.getElementById('progress_img');
+			var oProgress = document.getElementById('progress');
+			var oProgress_bar = document.getElementById('progress_bar');
+			var oNumber_input = document.getElementById('number_input');
+
+			var disX = 0; //只要左右可以拖动
+			oProgress_img.onmousedown = function(ev) {
+				var oEvent = ev || event;
+				disX = oEvent.clientX - oProgress_img.offsetLeft;
+				if(oProgress_img.setCapture) { //IE
+					oProgress_img.onmousemove = mouseMove;
+					oProgress_img.onmouseup = mouseUp;
+					oProgress_img.setCapture(); //事件捕获，将整个浏览器的焦点都放在div上
+
+				} else { //chrome FF
+					document.onmousemove = mouseMove;
+					document.onmouseup = mouseUp;
+				}
+
+				function mouseMove(ev) {
+					var oEvent = ev || event;
+					var l = oEvent.clientX - disX;
+					if(l < 0) {
+						l = 0;
+					} else if(l > oProgress.offsetWidth - oProgress_img.offsetWidth) {
+						l = oProgress.offsetWidth - oProgress_img.offsetWidth;
+					}
+					oProgress_img.style.left = l + 'px';
+					var scale = l / (oProgress.offsetWidth - oProgress_img.offsetWidth);
+					document.getElementById('number_input').value = Math.round(scale * 100);
+					oProgress_bar.style.opacity = 1;
+					oProgress_bar.style.width = 300 * scale + 'px';
+				}
+
+				function mouseUp() {
+					this.onmousemove = null;
+					this.onmouseup = null;
+					if(releaseCapture) {
+						oProgress_img.releaseCapture(); //取消事件捕获
+					}
+
+				}
+				return false; //防止 chrome IE9 firefox浏览器的bug
+			};
+			var test = document.getElementById("test");
+			var video_update_btn = document.getElementById("video_update_btn");
+			var video_save_btn = document.getElementById("video_save_btn");
+			var video_jump = document.getElementById("video_jump");
+			var con_video_management = document.getElementById("con_video_management");
+			var camera_update_btn = document.getElementById("camera_update_btn");
+			var pm = document.getElementById("pm");
+			var test_camera = document.getElementById("test_camera");
+			var con_camera = document.getElementById("con_camera");
+			var con_camera_save_btn = document.getElementById("con_camera_save_btn");
+
+
+
+			function select_option() {
+				///////////////码流类型////////////////////////////
+				// 获取select里option的值
+				for(var i = 1; i <= 11; i++) {
+					var options = $('#jump_select_' + i + ' option');
+
+					var arr = [];
+					for(var j = 0; j < options.length; j++) {
+						// 添加到数组里
+						arr.push(options.eq(j).val());
+					}
+					var option_items = arr.join(',');
+
+					var option_item = option_items.split(",");
+
+					var jump_option = document.getElementById('select_' + i);
+
+					for(var j = 0; j < option_item.length; j++) {
+						if(jump_option.innerText == option_item[j]) {
+							$("#jump_select_" + i + " option[value='" + jump_option.innerText + "'] ").attr("selected", true);
+						}
+					}
+				}
+			}
+          
+          // 点击该按钮进行修改
+          video_update_btn.onclick = function() {
+				//// 隐藏查看页面，显示修改页面
+				con_video_management.style.display = "block";
+				video_jump.style.display = "none";
+				// Janine: 传输数据
+				
+				document.getElementById('number_input').value = document.getElementById("jump_number").innerText; // 数值
+				document.getElementById('frame_interval_input').value = document.getElementById("jump_frame_interval").innerText;
+
+				
+				select_option();
+			}
+          // 点击该按钮进行保存
+			video_save_btn.onclick = function() {
+				// 隐藏修改页面，显示查看页面
+				con_video_management.style.display = "none";
+				video_jump.style.display = "block";
+			}
+		
+		
+//			video_settings.onclick = function() {
+//				con_camera.style.display = "none";
+//				test_camera.style.display = "none";
+//				con_video_management.style.display = "none";
+//				test.style.display = "block";
+//			}
+//			// 点击摄像机
+//			pm.onclick = function() {
+//				test.style.display = "none";
+//				con_video_management.style.display = "none";
+//				camera_update_btn.onclick = function() {
+//					test_camera.style.display = "none";
+//					con_camera.style.display = "block";
+//				}
+			//}
+			
+			// 点击该按钮进行修改
+			camera_update_btn.onclick = function() {
+				// 隐藏查看页面。显示修改页面
+				camera_jump.style.display = "none";
+//				alert(document.getElementById("jump_con_1").innerText);
+				for(var i = 1; i <= 4; i++) {
+					document.getElementById('con_input_' + i).value = document.getElementById("jump_con_" + i).innerText;
+				}
+				con_camera.style.display = "block";
+			}
+			
+			// 点击该按钮进行保存
+			con_camera_save_btn.onclick = function() {
+				// 隐藏修改页面，显示查看页面
+				con_camera.style.display = "none";
+				camera_jump.style.display = "block";
+			}
+
+		}
+	</script>
+
+</html>

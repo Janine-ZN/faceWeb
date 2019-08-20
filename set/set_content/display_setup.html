@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="../../css/set-main.css">
+	<link rel="stylesheet" href="../../css/rangeslider.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			background-color: #dfebef;
+		}
+		body {
+			font-family: sans-serif;
+			/*color: #fff;*/
+		}
+			/*.main input[type=radio] {
+				display: none;
+			}*/
+			#tab-1,#tab-2{
+				display: none;
+			}
+			
+			.radioclass {
+				opacity: 0;
+				cursor: pointer;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+				filter: alpha(opacity=0);
+			}
+			#tab1{width:715px;}
+	       #tab1 ul{list-style:none; display:block;height:30px;line-height:30px;background-color: #e1f1f7;border-radius: 15px;}
+	       #tab1 ul li{cursor:pointer;float:left;list-style:none;height:29px;width:100px;line-height:29px;text-align: center;}
+	       #tab1 ul li.on{background-color:#1869ef;color:white;border-radius: 14.5px;}
+	       #tab1 div{line-height:24px;}
+	       .hide{display:none;}
+			#tab-1:checked~.tab label:nth-child(1),
+			#tab-2:checked~.tab label:nth-child(2){
+				color: #155cec;
+				width: 120px;
+				height: 48px;
+				background-color: white;
+				box-shadow: none;
+			}
+			
+			.content>div {
+				display: none;
+			}
+			
+			#tab-1:checked~.content div:nth-child(1),
+			#tab-2:checked~.content div:nth-child(2) {
+				display: block;
+			}
+			
+			.main {
+				margin-left: 0;
+				width: 100%;
+				height: 100%;
+				border: 1px dashed #dfebef;
+			}
+			
+			.tab {
+				overflow: hidden;
+			}
+			
+			.tab label {
+				font-size: 18px;
+				cursor: pointer;
+				float: left;
+				color: #155cec;
+				width: 120px;
+				height: 25px;
+				/*width: 25%;*/
+				text-align: center;
+				padding: 15px 0;
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: 2px;
+				/*box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);*/
+				user-select: none;
+				-webkit-user-select: none;
+				/*border: 1px dashed #8e8e8e;*/
+				border-bottom: none;
+			}
+			
+			.content {
+				background-color: white;
+				position: absolute;
+				width: 100%;
+				height: 900px;
+				/*border: 1px dashed #8e8e8e;*/
+				border-top: none;
+				/*border-top: none;*/
+			}
+			
+			.content>div {
+				padding: 30px;
+				line-height: 1.5;
+				font-size: 17px;
+			}
+			.con{
+				position:absolute;
+				width: 720px;
+				height: 675px;
+				/*border: 1px dashed #8e8e8e;*/
+				margin-top: 0;
+				margin-left: 500px;
+				float: left;
+			}
+			.plat{
+				position: relative;
+				top: -15px;
+				left: 40px;
+				color: #8e8e8e;
+				background: #FFFFFF;
+				font-size: smaller;
+			}
+			.plat_select{
+				margin-left: -60px;
+				margin-top: 5px;
+				width: 300px;
+				height: 30px;
+				border-radius: 15px;
+				/*border-style: dashed;*/
+				/*border:1px dashed #8e8e8e;*/	
+			}
+			.con_PM{
+				position:absolute;
+				width: 45%;
+				height: 75%;
+				/*border: 1px dashed #8e8e8e;*/
+				color: #8e8e8e;
+				float: left;
+				margin-top: 0;
+				margin-left: 40%;
+			}
+			.setup-png{
+				float: left;
+			}
+			ul{
+				list-style-type: none;
+				margin-left: 0;
+				padding: 0;
+			}
+			li{
+				display: inline;
+				float: left;
+				width: 80px;
+				text-align: center;
+				line-height: 37px;
+			}
+			a{ text-decoration:none; color:black;}
+      		a:hover{text-decoration:none; color:#336699;}
+			output{
+			    position: relative;
+			    width: 74px;
+			    height: 38px;
+			    direction: rtl;
+			    border:1px dashed #dcdcdc;
+			    border-radius: 12px;
+			    padding-top: 4px;
+    			padding-right: 10px;			    
+			}
+			.progress{
+			    height: 50px;
+			}
+			/*与radio相关的样式*/
+			.demo--label{margin:0px 20px 0 0;display:inline-block}
+			.demo--radio{display:none}
+			.demo--radioInput{
+				background-color:#fff;
+				border:1px dashed rgba(0,0,0,0.15);
+				border-radius:100%;
+				display:inline-block;
+				height:16px;
+				margin-right:10px;
+				margin-top:-1px;
+				vertical-align:middle;
+				width:16px;line-height:1
+			}
+			.demo--radio:checked + .demo--radioInput:after{background-image: url(../../img/selected.png);/*border-radius:100%;*/content:"";display:inline-block;height:18px;/*margin:2px;*/width:18px}
+			.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+			.demo--checkbox{display:none}
+			.demo--checkboxInput{
+				background-color:#fff;
+				border:1px dashed rgba(0,0,0,0.15);
+				border-radius:100%;
+				display:inline-block;
+				height:16px;
+				margin-right:10px;
+				margin-top:-1px;
+				vertical-align:middle;
+				width:16px;line-height:1
+			}
+			.demo--checkbox:checked + .demo--checkboxInput:after{background-image: url(../../img/selected.png);/*border-radius:100%;*/content:"";display:inline-block;height:18px;/*margin:2px;*/width:18px}
+			.demo--checkbox.demo--checkboxInput,.demo--checkbox:checked + .demo--checkbox.demo--checkboxInput:after{border-radius:0}
+			.aperture-type{
+				margin-left: -54px;
+			    margin-top: 45px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.aperture{
+			    position: relative;
+			    top: 0px;
+			    left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.demo-radio{display:none}
+			.demo-label{padding-left: 20px; padding-right: 20px;height: 38px;display: inline-block;border-radius: 38px;}
+			.demo-radio:checked{
+				background-color: #000000;
+			}
+			nav{
+				background-color: #E1F1F7;
+				width: 700px;
+				height: 38px;
+				line-height: 38px;
+				margin-top: 32px;
+				border-radius: 20px;
+			}
+			.nav{
+				background-color: #E1F1F7;
+				margin-left: 120px;
+				width: 300px;
+				height: 38px;
+				line-height: 38px;
+				margin-top: 28px;
+				border-radius: 20px;
+			}
+			.nav1{
+				background-color: #E1F1F7;
+				margin-left: 120px;
+				width: 475px;
+				height: 38px;
+				line-height: 38px;
+				margin-top: 28px;
+				border-radius: 20px;
+			}
+			.exposure-time{
+			    margin-top: 5px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 640px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.exposure-time1{
+			    margin-top: 28px;
+			    margin-left: -77px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 580px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.time-of-exposure{
+				margin-left: 20px;
+				margin-top: 5px;
+				margin-bottom: 30px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.over-exposure{
+				margin-left: -70px;
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.exposure{
+				position: relative;
+			    top: 0px;
+			    left: 0px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.time{
+				position: relative;
+			    top: 16px;
+			    left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.exposure1{
+				position: relative;
+			    top: -6px;
+			    left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.fill-light{
+				position: relative;
+			    top: -16px;
+			    left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.sensitivity{
+				margin-left: 20px;
+			    margin-top: 2px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 640px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.sen{
+				position: relative;
+			    top: 12px;
+			    left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.pattern{
+				margin-top: 8px;
+				margin-left: 18px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.patt{
+				position: relative;
+			    top: 21px;
+    			left: 30px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.digital-reduction{
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.mirror-image{
+				margin-left: 7px;
+				margin-top: 18px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.mirror{
+				position: relative;
+			    top: 28px;
+    			left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.digital{
+				position: relative;
+			    top: 18px;
+    			left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.revealed-patterns{
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.revealed{
+				position: relative;
+			    top: 18px;
+			    left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.fast-asr{
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+				margin-bottom: 20px;
+			}
+			.fast{
+				position: relative;
+			    top: 18px;
+			    left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.setup-for{
+				margin-left: 7px;
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 580px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.setup{
+				position: relative;
+			    top: 18px;
+			    left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.video-input{
+				margin-left: 7px;
+				margin-top: 8px;
+			    width: 695px;
+			    height: 40px;
+			    padding: 0 0 0 630px;
+				border: 1px dashed #8e8e8e;
+				border-radius: 20px;
+			}
+			.video{
+				position: relative;
+			    top: 18px;
+			    left: 21px;
+			    color: #8e8e8e;
+			    background: #FFFFFF;
+			    font-size: smaller;
+			}
+			.filter{
+				margin-left: 20px;
+				margin-top: -17px;
+			}
+			.bg{
+				background-color:rgb(24,105,239);
+				color: white;
+			}
+			.vision_jump{
+				margin:10px 0 50px 0;
+				height: 200px;
+			}
+			.con_vision_management{
+				margin-top:50px ;
+			}
+			.jump_frame{
+				padding-top:25px ;
+				color: #000000;
+				border: 0px;
+			}
+			.jump-label{
+				position: relative;
+				color: #8E8E8E;
+			}
+			.vision_update_btn{
+				margin-left: 18px;
+				width: 80px;
+				height: 30px;
+				border-radius: 15px;
+				color: white;
+				background-color: #155CEC;
+				border: 1px dashed #155CEC;
+			}
+			.save{
+				margin-left: 18px;
+				margin-top: 0px;
+				width: 300px;
+				height: 30px;
+				border-radius: 15px;
+				color: white;
+				background-color: #155CEC;
+				border: 1px dashed #8E8E8E;
+			}
+			.reset{
+				margin-left: 18px;
+				margin-top: 0px;
+				width: 80px;
+				height: 30px;
+				border-radius: 15px;
+				color: #155CEC;
+				background-color: white;
+				border: 1px dashed #155CEC;
+			}
+			.li_span_3{
+				float: left;
+				margin-left: 70px;
+			}
+			.li_span-3{
+				float: left;
+				margin-left: 70px;
+			}
+			.id2_radius_1{
+				display: inline-block;
+				width: 250px;
+				height: 30px;
+				border:1px dashed #AAA;
+				border-radius: 20px;
+				text-align: right;
+				line-height: 30px;
+				font-size: 14px;
+				color: black;
+				position: relative;
+				float: left;
+				margin-left: 10px;
+			}
+			.id2_radius_1 input{
+				width:150px;
+				border: none;
+			}
+			.id2_radius_3{
+				display: inline-block;
+				width: 250px;
+				height: 30px;
+				border:1px dashed #AAA;
+				border-radius: 20px;
+				text-align: right;
+				line-height: 30px;
+				font-size: 14px;
+				color: black;
+				position: relative;
+				margin-left: 70px;
+			}
+			.id2_radius_3 input{
+				width:150px;
+				border: none;
+			}
+			.li_span_1{
+				font-size: 12px;
+				color: #8e8e8e;
+				display: block;
+				background: #FFF;
+				position: absolute;
+				bottom: 15px;
+				left: 15px;
+			}
+			.id2_radius_2{
+				display: inline-block;
+				width: 250px;
+				height: 30px;
+				border:1px dashed #AAA;
+				border-radius: 20px;
+				text-align: right;
+				line-height: 30px;
+				font-size: 14px;
+				color: black;
+				position: relative;
+				float: left;
+				margin-left: 10px;
+			}
+			.id2_radius_2 input{
+				width:150px;
+				border: none;
+			}
+			.li_span_2{
+				font-size: 12px;
+				color: #8e8e8e;
+				display: block;
+				background: #FFF;
+				position: absolute;
+				bottom: 15px;
+				left: 15px;
+			}
+		</style>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/rangeslider.min.js"></script>
+		<script type="text/javascript" src="../../jedate/jedate.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var radios = document.getElementsByName('object');
+				for(var i=0;i<radios.length;i++){
+					radios[i].indexs=i+1;
+					radios[i].onchange =function(){
+						if(this.checked){
+							
+							document.getElementById("id1").style.display="none";
+							
+							document.getElementById("id2").style.display="none";
+						
+							document.getElementById("id"+this.indexs).style.display="block";
+						}
+					}  
+				}
+				var radi = document.getElementsByName('object2');
+				for(var k=0;k<radi.length;k++){
+					radi[k].indexs=k+1;
+					radi[k].onchange =function(){
+						if(this.checked){
+							
+							document.getElementById("ID-1").style.display="none";
+							
+							document.getElementById("ID-2").style.display="none";
+							
+							document.getElementById("ID-3").style.display="none";
+						
+							document.getElementById("ID-"+this.indexs).style.display="block";
+						}
+					}  
+				}
+				var rad = document.getElementsByName('object3');
+				for(var x=0;x<rad.length;x++){
+					rad[x].indexs=x+1;
+					rad[x].onchange =function(){
+						if(this.checked){
+							
+							document.getElementById("ID_1").style.display="none";
+							
+							document.getElementById("ID_2").style.display="none";
+							
+							document.getElementById("ID_3").style.display="none";
+						
+							document.getElementById("ID_"+this.indexs).style.display="block";
+							document.getElementById("ID1").style.backgroundColor="#E1F1F7";
+							document.getElementById("ID2").style.backgroundColor="#E1F1F7";
+							document.getElementById("ID3").style.backgroundColor="#E1F1F7";
+							document.getElementById("ID"+this.indexs).style.backgroundColor="#1869EF";
+							document.getElementById("ID1").style.color="black";
+							document.getElementById("ID2").style.color="black";
+							document.getElementById("ID3").style.color="black";
+							document.getElementById("ID"+this.indexs).style.color="white";
+						}
+					}  
+				}
+				var rad1 = document.getElementsByName('object4');
+				for(var y=0;y<rad1.length;y++){
+					rad1[y].indexs=y+1;
+					rad1[y].onchange =function(){
+						if(this.checked){
+							
+							document.getElementById("day_1").style.display="none";
+							
+							document.getElementById("day_2").style.display="none";
+							
+							document.getElementById("day_3").style.display="none";
+							document.getElementById("day_4").style.display="none";
+							
+							document.getElementById("day_5").style.display="none";
+						
+							document.getElementById("day_"+this.indexs).style.display="block";
+							document.getElementById("day-1").style.backgroundColor="#E1F1F7";
+							document.getElementById("day-2").style.backgroundColor="#E1F1F7";
+							document.getElementById("day-3").style.backgroundColor="#E1F1F7";
+							document.getElementById("day-4").style.backgroundColor="#E1F1F7";
+							document.getElementById("day-5").style.backgroundColor="#E1F1F7";
+							document.getElementById("day-"+this.indexs).style.backgroundColor="#1869EF";
+							document.getElementById("day-1").style.color="black";
+							document.getElementById("day-2").style.color="black";
+							document.getElementById("day-3").style.color="black";
+							document.getElementById("day-4").style.color="black";
+							document.getElementById("day-5").style.color="black";
+							document.getElementById("day-"+this.indexs).style.color="white";
+						}
+					}  
+				}
+				var rad2 = document.getElementsByName('object5');
+				for(var h=0;h<rad2.length;h++){
+					rad2[h].indexs=h+1;
+					rad2[h].onchange =function(){
+						if(this.checked){
+							
+							document.getElementById("n_1").style.display="none";
+							
+							document.getElementById("n_2").style.display="none";
+							
+							document.getElementById("n_3").style.display="none";
+							document.getElementById("n_4").style.display="none";
+							
+							document.getElementById("n_5").style.display="none";
+						
+							document.getElementById("n_"+this.indexs).style.display="block";
+							document.getElementById("n-1").style.backgroundColor="#E1F1F7";
+							document.getElementById("n-2").style.backgroundColor="#E1F1F7";
+							document.getElementById("n-3").style.backgroundColor="#E1F1F7";
+							document.getElementById("n-4").style.backgroundColor="#E1F1F7";
+							document.getElementById("n-5").style.backgroundColor="#E1F1F7";
+							document.getElementById("n-"+this.indexs).style.backgroundColor="#1869EF";
+							document.getElementById("n-1").style.color="black";
+							document.getElementById("n-2").style.color="black";
+							document.getElementById("n-3").style.color="black";
+							document.getElementById("n-4").style.color="black";
+							document.getElementById("n-5").style.color="black";
+							document.getElementById("n-"+this.indexs).style.color="white";
+						}
+					}  
+				}
+				var radio = document.getElementsByName('object1');
+				for(var j=0;j<radio.length;j++){
+					radio[j].indexs=j+1;
+					radio[j].onchange =function(){
+						if(this.checked){
+							document.getElementById("id-1").style.display="none";
+							document.getElementById("id-2").style.display="none";
+							document.getElementById("id-3").style.display="none";
+							document.getElementById("id-4").style.display="none";
+							document.getElementById("id-5").style.display="none";
+							document.getElementById("id-6").style.display="none";
+							document.getElementById("id-7").style.display="none";
+							document.getElementById("id-"+this.indexs).style.display="block";
+							document.getElementById("id_1").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_2").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_3").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_4").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_5").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_6").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_7").style.backgroundColor="#E1F1F7";
+							document.getElementById("id_"+this.indexs).style.backgroundColor="#1869EF";
+							document.getElementById("id_1").style.color="black";
+							document.getElementById("id_2").style.color="black";
+							document.getElementById("id_3").style.color="black";
+							document.getElementById("id_4").style.color="black";
+							document.getElementById("id_5").style.color="black";
+							document.getElementById("id_6").style.color="black";
+							document.getElementById("id_7").style.color="black";
+							document.getElementById("id_"+this.indexs).style.color="white";
+						}
+					}  
+				}
+				var vision_update_btn = document.getElementById("vision_update_btn");
+				var vision_save_btn = document.getElementById("vision_save_btn");
+				var vision_jump = document.getElementById("vision_jump");
+				//点击按钮进行修改
+				vision_update_btn.onclick = function(){
+					con_vision_management.style.display = "block";
+					vision_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				vision_save_btn.onclick = function(){
+					con_vision_management.style.display = 'none';
+					vision_jump.style.display = "block";
+				}
+				var n_vision_update_btn = document.getElementById("n_vision_update_btn");
+				var n_vision_save_btn = document.getElementById("n_vision_save_btn");
+				var n_vision_jump = document.getElementById("n_vision_jump");
+				//点击按钮进行修改
+				n_vision_update_btn.onclick = function(){
+					n_con_vision_management.style.display = "block";
+					n_vision_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				n_vision_save_btn.onclick = function(){
+					n_con_vision_management.style.display = 'none';
+					n_vision_jump.style.display = "block";
+				}
+				var d_vision_update_btn = document.getElementById("d_vision_update_btn");
+				var d_vision_save_btn = document.getElementById("d_vision_save_btn");
+				var d_vision_jump = document.getElementById("d_vision_jump");
+				//点击按钮进行修改
+				d_vision_update_btn.onclick = function(){
+					d_con_vision_management.style.display = "block";
+					d_vision_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				d_vision_save_btn.onclick = function(){
+					d_con_vision_management.style.display = 'none';
+					d_vision_jump.style.display = "block";
+				}
+				var exposure_update_btn = document.getElementById("exposure_update_btn");
+				var exposure_save_btn = document.getElementById("exposure_save_btn");
+				var exposure_jump = document.getElementById("exposure_jump");
+				//点击按钮进行修改
+				exposure_update_btn.onclick = function(){
+					con_exposure.style.display = "block";
+					exposure_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				exposure_save_btn.onclick = function(){
+					con_exposure.style.display = 'none';
+					exposure_jump.style.display = "block";
+				}
+				var n_exposure_update_btn = document.getElementById("n_exposure_update_btn");
+				var n_exposure_save_btn = document.getElementById("n_exposure_save_btn");
+				var n_exposure_jump = document.getElementById("n_exposure_jump");
+				//点击按钮进行修改
+				n_exposure_update_btn.onclick = function(){
+					n_con_exposure.style.display = "block";
+					n_exposure_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				n_exposure_save_btn.onclick = function(){
+					n_con_exposure.style.display = 'none';
+					n_exposure_jump.style.display = "block";
+				}
+				var d_exposure_update_btn = document.getElementById("d_exposure_update_btn");
+				var d_exposure_save_btn = document.getElementById("d_exposure_save_btn");
+				var d_exposure_jump = document.getElementById("d_exposure_jump");
+				//点击按钮进行修改
+				d_exposure_update_btn.onclick = function(){
+					d_con_exposure.style.display = "block";
+					d_exposure_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				d_exposure_save_btn.onclick = function(){
+					d_con_exposure.style.display = 'none';
+					d_exposure_jump.style.display = "block";
+				}
+				var daynight_update_btn = document.getElementById("daynight_update_btn");
+				var daynight_save_btn = document.getElementById("daynight_save_btn");
+				var daynight_jump =document.getElementById("daynight_jump");
+				//点击按钮进行修改
+				daynight_update_btn.onclick = function(){
+					con_daynight.style.display = "block";
+					daynight_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				daynight_save_btn.onclick = function(){
+					con_daynight.style.display = 'none';
+					daynight_jump.style.display = "block";
+				}
+				var c_daynight_update_btn = document.getElementById("c_daynight_update_btn");
+				var c_daynight_save_btn = document.getElementById("c_daynight_save_btn");
+				var c_daynight_jump =document.getElementById("c_daynight_jump");
+				//点击按钮进行修改
+				c_daynight_update_btn.onclick = function(){
+					c_con_daynight.style.display = "block";
+					c_daynight_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				c_daynight_save_btn.onclick = function(){
+					c_con_daynight.style.display = 'none';
+					c_daynight_jump.style.display = "block";
+				}
+				var backlight_update_btn = document.getElementById("backlight_update_btn");
+				var backlight_save_btn = document.getElementById("backlight_save_btn");
+				var backlight_jump =document.getElementById("backlight_jump");
+				//点击按钮进行修改
+				backlight_update_btn.onclick = function(){
+					con_backlight.style.display = "block";
+					backlight_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				backlight_save_btn.onclick = function(){
+					con_backlight.style.display = 'none';
+					backlight_jump.style.display = "block";
+				}
+				var n_backlight_update_btn = document.getElementById("n_backlight_update_btn");
+				var n_backlight_save_btn = document.getElementById("n_backlight_save_btn");
+				var n_backlight_jump =document.getElementById("n_backlight_jump");
+				//点击按钮进行修改
+				n_backlight_update_btn.onclick = function(){
+					n_con_backlight.style.display = "block";
+					n_backlight_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				n_backlight_save_btn.onclick = function(){
+					n_con_backlight.style.display = 'none';
+					n_backlight_jump.style.display = "block";
+				}
+				var d_backlight_update_btn = document.getElementById("d_backlight_update_btn");
+				var d_backlight_save_btn = document.getElementById("d_backlight_save_btn");
+				var d_backlight_jump =document.getElementById("d_backlight_jump");
+				//点击按钮进行修改
+				d_backlight_update_btn.onclick = function(){
+					d_con_backlight.style.display = "block";
+					d_backlight_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				d_backlight_save_btn.onclick = function(){
+					d_con_backlight.style.display = 'none';
+					d_backlight_jump.style.display = "block";
+				}
+				var balance_update_btn = document.getElementById("balance_update_btn");
+				var balance_save_btn = document.getElementById("balance_save_btn");
+				var balance_jump = document.getElementById("balance_jump");
+				//点击按钮进行修改
+				balance_update_btn.onclick = function(){
+					con_balance.style.display = "block";
+					balance_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				balance_save_btn.onclick = function(){
+					con_balance.style.display = 'none';
+					balance_jump.style.display = "block";
+				}
+				var n_balance_update_btn = document.getElementById("n_balance_update_btn");
+				var n_balance_save_btn = document.getElementById("n_balance_save_btn");
+				var n_balance_jump = document.getElementById("n_balance_jump");
+				//点击按钮进行修改
+				n_balance_update_btn.onclick = function(){
+					n_con_balance.style.display = "block";
+					n_balance_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				n_balance_save_btn.onclick = function(){
+					n_con_balance.style.display = 'none';
+					n_balance_jump.style.display = "block";
+				}
+				var d_balance_update_btn = document.getElementById("d_balance_update_btn");
+				var d_balance_save_btn = document.getElementById("d_balance_save_btn");
+				var d_balance_jump = document.getElementById("d_balance_jump");
+				//点击按钮进行修改
+				d_balance_update_btn.onclick = function(){
+					d_con_balance.style.display = "block";
+					d_balance_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				d_balance_save_btn.onclick = function(){
+					d_con_balance.style.display = 'none';
+					d_balance_jump.style.display = "block";
+				}
+				var image_update_btn = document.getElementById("image_update_btn");
+				var image_save_btn = document.getElementById("image_save_btn");
+				var image_jump = document.getElementById("image_jump");
+				//点击按钮进行修改
+				image_update_btn.onclick = function(){
+					con_image.style.display = "block";
+					image_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				image_save_btn.onclick = function(){
+					con_image.style.display = 'none';
+					image_jump.style.display = "block";
+				}
+				var d_image_update_btn = document.getElementById("d_image_update_btn");
+				var d_image_save_btn = document.getElementById("d_image_save_btn");
+				var d_image_jump = document.getElementById("d_image_jump");
+				//点击按钮进行修改
+				d_image_update_btn.onclick = function(){
+					d_con_image.style.display = "block";
+					d_image_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				d_image_save_btn.onclick = function(){
+					d_con_image.style.display = 'none';
+					d_image_jump.style.display = "block";
+				}
+				var n_image_update_btn = document.getElementById("n_image_update_btn");
+				var n_image_save_btn = document.getElementById("n_image_save_btn");
+				var n_image_jump = document.getElementById("n_image_jump");
+				//点击按钮进行修改
+				n_image_update_btn.onclick = function(){
+					n_con_image.style.display = "block";
+					n_image_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				n_image_save_btn.onclick = function(){
+					n_con_image.style.display = 'none';
+					n_image_jump.style.display = "block";
+				}
+				var adjustment_update_btn = document.getElementById("adjustment_update_btn");
+				var adjustment_save_btn = document.getElementById("adjustment_save_btn");
+				var adjustment_jump = document.getElementById("adjustment_jump");
+				//点击按钮进行修改
+				adjustment_update_btn.onclick = function(){
+					con_adjustment.style.display = "block";
+					adjustment_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				adjustment_save_btn.onclick = function(){
+					con_adjustment.style.display = 'none';
+					adjustment_jump.style.display = "block";
+				}
+				var g_adjustment_update_btn = document.getElementById("g_adjustment_update_btn");
+				var g_adjustment_save_btn = document.getElementById("g_adjustment_save_btn");
+				var g_adjustment_jump = document.getElementById("g_adjustment_jump");
+				//点击按钮进行修改
+				g_adjustment_update_btn.onclick = function(){
+					g_con_adjustment.style.display = "block";
+					g_adjustment_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				g_adjustment_save_btn.onclick = function(){
+					g_con_adjustment.style.display = 'none';
+					g_adjustment_jump.style.display = "block";
+				}
+				var osd_update_btn = document.getElementById("osd_update_btn");
+				var osd_save_btn = document.getElementById("osd_save_btn");
+				var osd_jump = document.getElementById("osd-jump");
+				//点击按钮进行修改
+				osd_update_btn.onclick = function(){
+					con_osd.style.display = "block";
+					osd_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				osd_save_btn.onclick = function(){
+					con_osd.style.display = 'none';
+					osd_jump.style.display = "block";
+				}
+				var g_exposure_update_btn = document.getElementById("g_exposure_update_btn");
+				var g_exposure_save_btn = document.getElementById("g_exposure_save_btn");
+				var g_exposure_jump = document.getElementById("g_exposure_jump");
+				//点击按钮进行修改
+				g_exposure_update_btn.onclick = function(){
+					g_con_exposure.style.display = "block";
+					g_exposure_jump.style.display = "none";
+				}
+				//点击该按钮进行保存
+				g_exposure_save_btn.onclick = function(){
+					g_con_exposure.style.display = 'none';
+					g_exposure_jump.style.display = "block";
+				}
+			}
+			$(function() {
+		        var $document   = $(document);
+		        var selector    = '[data-rangeslider]';
+		        var $inputRange = $(selector);
+		
+		        // Example functionality to demonstrate a value feedback
+		        // and change the output's value.
+		        function valueOutput(element) {
+		            var value = element.value;
+		            var output = element.parentNode.getElementsByTagName('output')[0];
+		
+		            output.innerHTML = value;
+		        }
+		
+		        // Initial value output
+		        for (var i = $inputRange.length - 1; i >= 0; i--) {
+		            valueOutput($inputRange[i]);
+		        };
+		
+		        // Update value output
+		        $document.on('input', selector, function(e) {
+		            valueOutput(e.target);
+		        });
+		
+		        // Initialize the elements
+		        $inputRange.rangeslider({
+		            polyfill: false
+		        });
+		    });
+
+		</script>
+		
+	</head>
+
+	<body>
+		<div class="main">
+			<input type="radio" id="tab-1" name="show" checked/>
+			<input type="radio" id="tab-2" name="show" />
+			<div class="tab">
+				<label for="tab-1">显示设置</label>
+				<label for="tab-2">OSD设置</label>
+			</div>
+			<div class="content">
+				<div class="content-dis">
+					<div class="setup-png">
+						<img src="../../img/setup.png">						
+					</div>
+					<div class="con">
+						
+									<span>日夜参数转换：</span>
+							
+										<label class="demo--label">
+											<input class="demo--radio" type="radio" name="object" checked>
+											<span class="demo--radioInput"></span>自动切换
+										</label>
+										<label class="demo--label">
+											<input class="demo--radio" type="radio" name="object">
+											<span class="demo--radioInput"></span>定时切换
+										</label>
+										
+									
+										<div id="id1">
+										<nav>
+										<label class="demo-label bg" id="id_1">
+											<input class="demo-radio" type="radio" name="object1" checked>
+											<span>图像调节</span>
+										</label>
+										<label class="demo-label" id="id_2">
+											<input class="demo-radio" type="radio" name="object1">
+											<span>曝光</span>
+										</label>
+										<label class="demo-label" id="id_3">
+											<input class="demo-radio" type="radio" name="object1" checked>
+											<span>日夜转换</span>
+										</label>
+										<label class="demo-label" id="id_4">
+											<input class="demo-radio" type="radio" name="object1">
+											<span>背光</span>
+										</label>
+										<label class="demo-label" id="id_5">
+											<input class="demo-radio" type="radio" name="object1" checked>
+											<span>白平衡</span>
+										</label>
+										<label class="demo-label" id="id_6">
+											<input class="demo-radio" type="radio" name="object1">
+											<span>图像增强</span>
+										</label>
+										<label class="demo-label" id="id_7">
+											<input class="demo-radio" type="radio" name="object1">
+											<span>视频调整</span>
+										</label>
+										</nav>
+										<div id="id-1">
+										<div class="vision_jump" id="vision_jump">
+										<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+											<span name="" id="jump_inpu-1">50</span>
+										</div>
+										<div class="jump_frame"><label class="jump-label">对比度：</label>
+											<span name="" id="jump_inpu-2">50</span>
+										</div>
+										<div class="jump_frame"><label class="jump-label">饱和度：</label>
+											<span name="" id="jump_inpu-3">50</span>
+										</div>
+										<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+											<span name="" id="jump_inpu-4">50</span>
+										</div>
+										<div class="jump_frame">
+											<input class="vision_update_btn" id="vision_update_btn" type="button" name="" value="修改"/>
+										</div>
+										</div>
+										<div class="con_vision_management" id="con_vision_management" style="display: none;">
+											<form action="" method="post">
+											    <div class="progress">
+											        <span style="float: left;">&nbsp;&nbsp;&nbsp;亮度:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" value="50" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <div class="progress">
+											        <span style="float: left;">对比度:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" value="50" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <div class="progress">
+											        <span style="float: left;">饱和度:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" value="50" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <div class="progress">
+											        <span style="float: left;">&nbsp;&nbsp;&nbsp;锐度:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" value="50" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+										
+											<input class="save" type="button" class="save" id="vision_save_btn" value="填写好了，现在保存"/>
+											<input type="reset" class="reset" value="重置"/>
+											</form>
+										</div>
+										</div>
+			
+										<div id="id-2"style="display: none;">
+											<div class="exposure_jump" id="exposure_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;光圈类型：</label>
+												<span name="" id="jump_input-1">手动</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="jump_input-2">1/50</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="exposure_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_exposure" id="con_exposure" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">光圈类型：</label>
+									            <select class="aperture-type">
+									            <option style="text-align: right;" value="手动">手动</option>
+									           </select><br />
+									         <label class="time">曝光时间：</label>
+									            <select class="time-of-exposure">
+									            	<option style="text-align: right;" value="1/25">1/25</option>
+									            </select>
+									           <br />
+									            <input class="save" type="button" class="save" id="exposure_save_btn" value="填写好了，现在保存"/>
+												<input type="reset" class="reset" value="重置"/>
+											</form>
+											</div>
+										</div>
+										<div id="id-3" style="display: none;">
+											<div class="daynight_jump" id="daynight_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="">手动</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;灵敏度：</label>
+												<span name="" id="">0</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;过滤时间：</label>
+												<span name="" id="">50</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">防补光过曝：</label>
+												<span name="" id="">开启</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模式：</label>
+												<span name="" id="">自动</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="daynight_update_btn" type="button" name="" value="修改"/>											
+											</div>
+											</form>
+											</div>
+											<div class="con_daynight" id="con_daynight" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">曝光时间：</label>
+									            <select class="aperture-type">
+									            	<option style="text-align: right;" value="手动">手动</option>
+									            </select><br />
+									            <label class="sen">灵敏度：</label>
+									            <select class="sensitivity">
+									            	<option style="text-align: right;" >0</option>
+									            </select>
+									            <br /><br /><br />
+									            <div class="progress filter">
+											        <span style="float: left;font-size: smaller;">过滤时间:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 630px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <label class="fill-light">防补光过曝：</label>
+									            <select class="over-exposure">
+									            	<option style="text-align: right;" value="开启">开启</option>
+									            </select><br />
+									            <label class="patt">模式：</label>
+									            <select class="pattern">
+									            	<option style="text-align: right;" value="自动">自动</option>
+									            </select>
+									            <br /><br /><br />
+									            <button type="button" class="save" id="daynight_save_btn" type="button">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+												</form>
+											</div>
+										</div>
+										<div id="id-4"style="display: none;">
+											<div class="backlight_jump" id="backlight_jump">
+												<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态：</label>
+												<span name="" id="">开启</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态等级：</label>
+												<span name="" id="">50</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="backlight_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_backlight" id="con_backlight" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">宽动态：</label>
+									            <select class="aperture-type">
+									            	<option style="text-align: right;" value="开启">开启</option>
+									            </select>
+									            <br /><br /><br />
+									            <div class="progress">
+											        <span style="float: left;font-size: smaller;">宽动态等级:</span>
+											        <input type="range" min="0" max="100" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 645px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <br />
+									            <button type="button" class="save" id="backlight_save_btn">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+										</div>
+										<div id="id-5"style="display: none;">
+											<div class="balance_jump" id="balance_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="">自动白平衡</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="balance_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_balance" id="con_balance" style="display: none;">
+											<form action="" method="post">
+											<label class="exposure1">曝光时间：</label>
+									            <select class="exposure-time1">
+									            	<option style="text-align: right;" value="开启">自动白平衡</option>
+									            </select>
+											    <br /><br /><br />
+									            <button type="button" id="balance_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+										</div>
+										<div id="id-6"style="display: none;">
+											<div class="image_jump" id="image_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;数字降噪：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;透漏模式：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;电子防抖：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="image_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_image" id="con_image" style="display: none;">
+											<form action="" method="post">
+											<label class="digital">数字降噪：</label>
+									            <select class="digital-reduction">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="revealed">透漏模式：</label>
+									            <select class="revealed-patterns">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="fast">电子防抖：</label>
+									            <select class="fast-asr">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select>
+									            <button type="button" id="image_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+										</div>
+										<div id="id-7"style="display: none;">
+											<div class="adjustment_jump" id="adjustment_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;镜像：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;视频制式：</label>
+												<span name="" id="">PAL(50HZ)</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;视频输入模式：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="adjustment_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_adjustment" id="con_adjustment" style="display: none;">
+											<form action="" method="post">
+											<label class="mirror">镜像：</label>
+									            <select class="mirror-image">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="setup">视频制式：</label>
+									            <select class="setup-for">
+									            	<option style="text-align: right;" >PAL(50HZ)</option>
+									            </select><br />
+									             <label class="video">视频输入模式：</label>
+									            <select class="video-input">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select>
+											    <br /><br /><br />
+									            <button type="button" id="adjustment_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+										</div>
+										</div>
+			
+										<div id="id2"style="display: none;margin-top: 10px;">
+											<span class="li_span_3">时间：</span>
+											<div class="id2_radius_1">
+												<span class="li_span_1">开始时间：</span>
+												<input class="datainp" id="datebut1" type="text" readonly><img src="../../img/select_time.png" onClick="jeDate({dateCell:'#datebut1',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})" style="margin-right: 5px;"/>
+											</div>
+											<div class="id2_radius_2">
+												<span class="li_span_2">结束时间：</span>
+												<input class="datainp" id="datebut2" type="text" readonly><img src="../../img/select_time.png" onClick="jeDate({dateCell:'#datebut2',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})" style="margin-right: 5px;"/>
+											</div>	<br />
+											<span class="li_span-3">场景：</span>
+											<label class="demo--label">
+											<input class="demo--radio" type="radio" name="object2" checked>
+											<span class="demo--radioInput"></span>通用
+											</label>
+											<label class="demo--label">
+											<input class="demo--radio" type="radio" name="object2">
+											<span class="demo--radioInput"></span>白天
+											</label>
+											<label class="demo--label">
+											<input class="demo--radio" type="radio" name="object2">
+											<span class="demo--radioInput"></span>夜晚
+											</label>
+											<div id="ID-1">
+											<nav class="nav">
+											<label class="demo-label bg" id="ID1">
+											<input class="demo-radio" type="radio" name="object3" checked>
+											<span>曝光</span>
+											</label>
+											<label class="demo-label" id="ID2">
+												<input class="demo-radio" type="radio" name="object3">
+												<span>日夜转换</span>
+											</label>
+											<label class="demo-label" id="ID3">
+												<input class="demo-radio" type="radio" name="object3">
+												<span>视频调整</span>
+											</label>
+											</nav>
+											<div id="ID_1">
+											<div class="exposure_jump" id="g_exposure_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;光圈类型：</label>
+												<span name="">手动</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="">1/50</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="g_exposure_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_exposure" id="g_con_exposure" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">光圈类型：</label>
+									            <select class="aperture-type">
+									            <option style="text-align: right;" value="手动">手动</option>
+									           </select><br />
+									         <label class="time">曝光时间：</label>
+									            <select class="time-of-exposure">
+									            	<option style="text-align: right;" value="1/25">1/25</option>
+									            </select>
+									           <br />
+									            <input class="save" type="button" class="save" id="g_exposure_save_btn" value="填写好了，现在保存"/>
+												<input type="reset" class="reset" value="重置"/>
+											</form>
+											</div>
+											</div>
+											<div id="ID_2" style="display: none;">
+											<div class="daynight_jump" id="c_daynight_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="">手动</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;灵敏度：</label>
+												<span name="" id="">0</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;过滤时间：</label>
+												<span name="" id="">50</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">防补光过曝：</label>
+												<span name="" id="">开启</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模式：</label>
+												<span name="" id="">自动</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="c_daynight_update_btn" type="button" name="" value="修改"/>											
+											</div>
+											</form>
+											</div>
+											<div class="con_daynight" id="c_con_daynight" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">曝光时间：</label>
+									            <select class="aperture-type">
+									            	<option style="text-align: right;" value="手动">手动</option>
+									            </select><br />
+									            <label class="sen">灵敏度：</label>
+									            <select class="sensitivity">
+									            	<option style="text-align: right;" >0</option>
+									            </select>
+									            <br /><br /><br />
+									            <div class="progress filter">
+											        <span style="float: left;font-size: smaller;">过滤时间:&nbsp;&nbsp;</span>
+											        <input type="range" min="0" max="100" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 630px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <label class="fill-light">防补光过曝：</label>
+									            <select class="over-exposure">
+									            	<option style="text-align: right;" value="开启">开启</option>
+									            </select><br />
+									            <label class="patt">模式：</label>
+									            <select class="pattern">
+									            	<option style="text-align: right;" value="自动">自动</option>
+									            </select>
+									            <br /><br /><br />
+									            <button type="button" class="save" id="c_daynight_save_btn" type="button">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+												</form>
+											</div>
+											</div>
+											<div id="ID_3" style="display: none;">
+											<div class="adjustment_jump" id="g_adjustment_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;镜像：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;视频制式：</label>
+												<span name="" id="">PAL(50HZ)</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;视频输入模式：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="g_adjustment_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_adjustment" id="g_con_adjustment" style="display: none;">
+											<form action="" method="post">
+											<label class="mirror">镜像：</label>
+									            <select class="mirror-image">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="setup">视频制式：</label>
+									            <select class="setup-for">
+									            	<option style="text-align: right;" >PAL(50HZ)</option>
+									            </select><br />
+									             <label class="video">视频输入模式：</label>
+									            <select class="video-input">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select>
+											    <br /><br /><br />
+									            <button type="button" id="g_adjustment_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+											</div>
+											</div>
+											<div id="ID-2" style="display: none;">
+											<nav class="nav1">
+											<label class="demo-label bg" id="day-1">
+											<input class="demo-radio" type="radio" name="object4" checked>
+											<span>图像调节</span>
+											</label>
+											<label class="demo-label" id="day-2">
+												<input class="demo-radio" type="radio" name="object4">
+												<span>曝光</span>
+											</label>
+											<label class="demo-label" id="day-3">
+												<input class="demo-radio" type="radio" name="object4">
+												<span>背光</span>
+											</label>
+											<label class="demo-label" id="day-4">
+												<input class="demo-radio" type="radio" name="object4">
+												<span>白平衡</span>
+											</label>
+											<label class="demo-label" id="day-5">
+												<input class="demo-radio" type="radio" name="object4">
+												<span>图像增强</span>
+											</label>
+											</nav>
+											<div id="day_1">
+												<div class="vision_jump" id="d_vision_jump">
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+													<span name="" id="jump_inpu-1">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">对比度：</label>
+													<span name="" id="jump_inpu-2">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">饱和度：</label>
+													<span name="" id="jump_inpu-3">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+													<span name="" id="jump_inpu-4">50</span>
+												</div>
+												<div class="jump_frame">
+													<input class="vision_update_btn" id="d_vision_update_btn" type="button" name="" value="修改"/>
+												</div>
+												</div>
+												<div class="con_vision_management" id="d_con_vision_management" style="display: none;">
+													<form action="" method="post">
+													    <div class="progress">
+													        <span style="float: left;">&nbsp;&nbsp;&nbsp;亮度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">对比度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">饱和度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">&nbsp;&nbsp;&nbsp;锐度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+												
+													<input class="save" type="button" class="save" id="d_vision_save_btn" value="填写好了，现在保存"/>
+													<input type="reset" class="reset" value="重置"/>
+													</form>
+												</div>
+
+											</div>
+											<div id="day_2" style="display: none;">
+												<div class="exposure_jump" id="d_exposure_jump">
+													<form action="" method="post">
+													<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;光圈类型：</label>
+														<span name="" id="jump_input-1">手动</span>
+													</div>
+													<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+														<span name="" id="jump_input-2">1/50</span>
+													</div>
+													<div class="jump_frame">
+													<input class="vision_update_btn" id="d_exposure_update_btn" type="button" name="" value="修改"/>
+													</div>
+													</form>
+													</div>
+													<div class="con_exposure" id="d_con_exposure" style="display: none;">
+													<form action="" method="post">
+													<label class="aperture">光圈类型：</label>
+											            <select class="aperture-type">
+											            <option style="text-align: right;" value="手动">手动</option>
+											           </select><br />
+											         <label class="time">曝光时间：</label>
+											            <select class="time-of-exposure">
+											            	<option style="text-align: right;" value="1/25">1/25</option>
+											            </select>
+											           <br />
+											            <input class="save" type="button" class="save" id="d_exposure_save_btn" value="填写好了，现在保存"/>
+														<input type="reset" class="reset" value="重置"/>
+													</form>
+													</div>
+											</div>
+											<div id="day_3" style="display: none;">
+												<div class="backlight_jump" id="d_backlight_jump">
+												<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态：</label>
+												<span name="" id="">开启</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态等级：</label>
+												<span name="" id="">50</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="d_backlight_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_backlight" id="d_con_backlight" style="display: none;">
+											<form action="" method="post">
+											<label class="aperture">宽动态：</label>
+									            <select class="aperture-type">
+									            	<option style="text-align: right;" value="开启">开启</option>
+									            </select>
+									            <br /><br /><br />
+									            <div class="progress">
+											        <span style="float: left;font-size: smaller;">宽动态等级:</span>
+											        <input type="range" min="0" max="100" data-rangeslider>
+											        <output></output>
+											        <label style="position: relative;left: 645px;top: -53px;font-size: 12px;">数值：</label>
+											    </div>
+											    <br />
+									            <button type="button" class="save" id="d_backlight_save_btn">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+											</div>
+											<div id="day_4" style="display: none;">
+												<div class="balance_jump" id="d_balance_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="">自动白平衡</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="d_balance_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_balance" id="d_con_balance" style="display: none;">
+											<form action="" method="post">
+											<label class="exposure1">曝光时间：</label>
+									            <select class="exposure-time1">
+									            	<option style="text-align: right;" value="开启">自动白平衡</option>
+									            </select>
+											    <br /><br /><br />
+									            <button type="button" id="d_balance_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+											</div>
+											<div id="day_5" style="display: none;">
+											<div class="image_jump" id="d_image_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;数字降噪：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;透漏模式：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;电子防抖：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="d_image_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_image" id="d_con_image" style="display: none;">
+											<form action="" method="post">
+											<label class="digital">数字降噪：</label>
+									            <select class="digital-reduction">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="revealed">透漏模式：</label>
+									            <select class="revealed-patterns">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="fast">电子防抖：</label>
+									            <select class="fast-asr">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select>
+									            <button type="button" id="d_image_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>	
+											</div>
+											</div>
+											<div id="ID-3" style="display: none;">
+											<nav class="nav1">
+											<label class="demo-label bg" id="n-1">
+											<input class="demo-radio" type="radio" name="object5" checked>
+											<span>图像调节</span>
+											</label>
+											<label class="demo-label" id="n-2">
+												<input class="demo-radio" type="radio" name="object5">
+												<span>曝光</span>
+											</label>
+											<label class="demo-label" id="n-3">
+												<input class="demo-radio" type="radio" name="object5">
+												<span>背光</span>
+											</label>
+											<label class="demo-label" id="n-4">
+												<input class="demo-radio" type="radio" name="object5">
+												<span>白平衡</span>
+											</label>
+											<label class="demo-label" id="n-5">
+												<input class="demo-radio" type="radio" name="object5">
+												<span>图像增强</span>
+											</label>
+											</nav>
+											<div id="n_1">
+												<div class="vision_jump" id="n_vision_jump">
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+													<span name="" id="jump_inpu-1">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">对比度：</label>
+													<span name="" id="jump_inpu-2">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">饱和度：</label>
+													<span name="" id="jump_inpu-3">50</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;亮度：</label>
+													<span name="" id="jump_inpu-4">50</span>
+												</div>
+												<div class="jump_frame">
+													<input class="vision_update_btn" id="n_vision_update_btn" type="button" name="" value="修改"/>
+												</div>
+												</div>
+												<div class="con_vision_management" id="n_con_vision_management" style="display: none;">
+													<form action="" method="post">
+													    <div class="progress">
+													        <span style="float: left;">&nbsp;&nbsp;&nbsp;亮度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">对比度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">饱和度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+													    <div class="progress">
+													        <span style="float: left;">&nbsp;&nbsp;&nbsp;锐度:&nbsp;&nbsp;</span>
+													        <input type="range" min="0" max="100" value="50" data-rangeslider>
+													        <output></output>
+													        <label style="position: relative;left: 633px;top: -53px;font-size: 12px;">数值：</label>
+													    </div>
+												
+													<input class="save" type="button" class="save" id="n_vision_save_btn" value="填写好了，现在保存"/>
+													<input type="reset" class="reset" value="重置"/>
+													</form>
+												</div>
+											</div>
+											<div id="n_2" style="display: none;">
+												<div class="exposure_jump" id="n_exposure_jump">
+													<form action="" method="post">
+													<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;光圈类型：</label>
+														<span name="" id="jump_input-1">手动</span>
+													</div>
+													<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+														<span name="" id="jump_input-2">1/50</span>
+													</div>
+													<div class="jump_frame">
+													<input class="vision_update_btn" id="n_exposure_update_btn" type="button" name="" value="修改"/>
+													</div>
+													</form>
+													</div>
+													<div class="con_exposure" id="n_con_exposure" style="display: none;">
+													<form action="" method="post">
+													<label class="aperture">光圈类型：</label>
+											            <select class="aperture-type">
+											            <option style="text-align: right;" value="手动">手动</option>
+											           </select><br />
+											         <label class="time">曝光时间：</label>
+											            <select class="time-of-exposure">
+											            	<option style="text-align: right;" value="1/25">1/25</option>
+											            </select>
+											           <br />
+											            <input class="save" type="button" class="save" id="n_exposure_save_btn" value="填写好了，现在保存"/>
+														<input type="reset" class="reset" value="重置"/>
+													</form>
+													</div>
+											</div>
+											<div id="n_3" style="display: none;">
+												<div class="backlight_jump" id="n_backlight_jump">
+												<form action="" method="post">
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态：</label>
+													<span name="" id="">开启</span>
+												</div>
+												<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;宽动态等级：</label>
+													<span name="" id="">50</span>
+												</div>
+												<div class="jump_frame">
+												<input class="vision_update_btn" id="n_backlight_update_btn" type="button" name="" value="修改"/>
+												</div>
+												</form>
+												</div>
+												<div class="con_backlight" id="n_con_backlight" style="display: none;">
+												<form action="" method="post">
+												<label class="aperture">宽动态：</label>
+										            <select class="aperture-type">
+										            	<option style="text-align: right;" value="开启">开启</option>
+										            </select>
+										            <br /><br /><br />
+										            <div class="progress">
+												        <span style="float: left;font-size: smaller;">宽动态等级:</span>
+												        <input type="range" min="0" max="100" data-rangeslider>
+												        <output></output>
+												        <label style="position: relative;left: 645px;top: -53px;font-size: 12px;">数值：</label>
+												    </div>
+												    <br />
+										            <button type="button" class="save" id="n_backlight_save_btn">填写好了，现在保存</button>
+													<button type="button" class="reset">重置</button>
+												</form>
+												</div>
+											</div>
+											<div id="n_4" style="display: none;">
+												<div class="balance_jump" id="n_balance_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;曝光时间：</label>
+												<span name="" id="">自动白平衡</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="n_balance_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_balance" id="n_con_balance" style="display: none;">
+											<form action="" method="post">
+											<label class="exposure1">曝光时间：</label>
+									            <select class="exposure-time1">
+									            	<option style="text-align: right;" value="开启">自动白平衡</option>
+									            </select>
+											    <br /><br /><br />
+									            <button type="button" id="n_balance_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+											</div>
+											<div id="n_5" style="display: none;">
+												<div class="image_jump" id="n_image_jump">
+											<form action="" method="post">
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;数字降噪：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;透漏模式：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame"><label class="jump-label">&nbsp;&nbsp;&nbsp;电子防抖：</label>
+												<span name="" id="">关闭</span>
+											</div>
+											<div class="jump_frame">
+											<input class="vision_update_btn" id="n_image_update_btn" type="button" name="" value="修改"/>
+											</div>
+											</form>
+											</div>
+											<div class="con_image" id="n_con_image" style="display: none;">
+											<form action="" method="post">
+											<label class="digital">数字降噪：</label>
+									            <select class="digital-reduction">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="revealed">透漏模式：</label>
+									            <select class="revealed-patterns">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select><br />
+									             <label class="fast">电子防抖：</label>
+									            <select class="fast-asr">
+									            	<option style="text-align: right;" value="开启">关闭</option>
+									            </select>
+									            <button type="button" id="n_image_save_btn" class="save">填写好了，现在保存</button>
+												<button type="button" class="reset">重置</button>
+											</form>
+											</div>
+											</div>	
+											</div>
+										</div>
+								
+						</div>
+
+					</div>
+					<div class="content-dis">
+						<div class="setup-png">
+							<img src="../../img/setup.png">
+						</div>
+						<div class="con_PM">
+							<div class="osd-jump" id="osd-jump">
+								<form action="" method="post">
+									<div class="jump_frame"><label class="jump-label">显示摄像机名称：</label>
+										<span name="" >确认</span>
+									</div>
+									<div class="jump_frame"><label class="jump-label">显示摄像机备注：</label>
+										<span name="">确认</span>
+									</div>
+									<div class="jump_frame"><label class="jump-label">显示当前时间：</label>
+										<span name="" >确认</span>
+									</div>
+									<div class="jump_frame"><label class="jump-label">显示视频码率：</label>
+										<span name="">确认</span>
+									</div>
+									<div class="jump_frame"><label class="jump-label">显示视频清晰度：</label>
+										<span name="" >确认</span>
+									</div>
+									<div class="jump_frame">
+										<input class="vision_update_btn" id="osd_update_btn" type="button" name="" value="修改"/>
+									</div>
+								</form>								
+							</div>
+							<div class="con_osd" id="con_osd" style="display: none;">
+							<form action="" method="post">
+							<label class="demo--label">
+								<input class="demo--checkbox" type="checkbox" name="object" checked>
+								<span class="demo--checkboxInput"></span>显示摄像机名称
+							</label><br />
+							<label class="demo--label">
+								<input class="demo--checkbox" type="checkbox" name="object" checked>
+								<span class="demo--checkboxInput"></span>显示摄像机备注
+							</label><br />
+							<label class="demo--label">
+								<input class="demo--checkbox" type="checkbox" name="object" checked>
+								<span class="demo--checkboxInput"></span>显示当前时间
+							</label>
+							<div class="id2_radius_3">
+									<span class="li_span_1">时间设置：</span>
+									<input class="datainp" id="datebut3" type="text" readonly><img src="../../img/select_time.png" onClick="jeDate({dateCell:'#datebut3',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})" style="margin-right: 5px;"/>
+							</div>
+							<br />
+							<label class="demo--label">
+								<input class="demo--checkbox" type="checkbox" name="object" checked>
+								<span class="demo--checkboxInput"></span>显示视频码率
+							</label><br />
+							<label class="demo--label">
+								<input class="demo--checkbox" type="checkbox" name="object" checked>
+								<span class="demo--checkboxInput"></span>显示视频清晰度
+							</label><br /><br /><br />
+							<button type="button" id="osd_save_btn" class="save">填写好了，现在保存</button>
+							<button type="button" class="reset">重置</button>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+
+		</html>

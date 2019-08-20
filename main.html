@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>寰景信息</title>
+	</head>
+
+	<body style="background-image: url(img/body_bg.png);">
+		<iframe src="header.html" border="0" frameborder="0" width="100%" height="76px"></iframe>
+		<iframe src="view.html" id="view" name="below" frameborder="0" width="100%" scrolling="no"></iframe>
+		<script type="text/javascript">
+			function reinitIframe() {
+				var iframe = document.getElementById("view");
+				try {
+					var bHeight = iframe.contentWindow.document.body.scrollHeight;
+					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+					var height = Math.max(bHeight, dHeight);
+					iframe.height = height;
+				} catch(ex) {}
+			}
+			window.setInterval("reinitIframe()", 200);
+
+			
+		</script>
+	</body>
+
+</html>

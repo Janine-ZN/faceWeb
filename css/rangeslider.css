@@ -1,0 +1,64 @@
+.rangeslider,
+.rangeslider__fill {
+  background: #e1f8ff;
+  display: block;
+  height: 10px;
+  width: 100%;
+  -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.rangeslider {
+  position: relative;
+  width: 78%;
+  float: left;
+  margin-top: 7px;
+}
+
+.rangeslider--disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+.rangeslider__fill {
+  background: #00e4ac;
+  position: absolute;
+  top: 0;
+}
+
+.rangeslider__handle {
+  cursor: pointer;
+  width: 14px;
+  height: 20px;
+  top: -19px;
+  position: absolute;
+  background: url(../img/location.png) no-repeat;
+}
+.rangeslider__handle:after {
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../img/location.png) no-repeat;
+  background-size: 100%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.rangeslider__handle:active {
+  background: url(../img/location.png) no-repeat;
+  background-size: 100%;
+}
+
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+  -moz-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+  -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}

@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+}
+
+
+/*头部菜单样式*/
+
+#nav_header {
+	height: 76px;
+	background-image: url(../img/menu_bg.png);
+}
+
+#header_logo {
+	margin: 30px 30px 0 10px;
+	float: left;
+	display: inline;
+}
+
+#nav {
+	position: absolute;
+	top: 30px;
+	left: 30%;
+	float: left;
+	height: 30px;
+	width: 60%;
+}
+
+#nav ul {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	color: #FFF;
+	white-space: nowrap;
+}
+
+
+#nav li {
+	list-style-type: none;
+	margin: 0px 20px 0 20px;
+	display: inline;
+	
+
+}
+
+#nav li a {
+	text-decoration: none;
+	font-family: sans-serif;
+	padding: 10px 10px;
+	color: #E8E8E8;
+	
+}
+
+#nav li a:hover {
+	color: #fff;
+}
+
+#header_admin {
+	position: absolute;
+	top: 24px;
+	left: 90%;
+	display: inline;
+	float: left;
+	width: 123px;
+	height: 28px;
+	background-image: url(../img/admin.png);
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+.active {
+			padding: 3px 8px;
+			color: #FFF;
+			bottom: 2px;
+		}
+
+

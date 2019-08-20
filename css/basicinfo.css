@@ -1,0 +1,246 @@
+body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{  
+    padding: 0;  
+    margin: 0;  
+}  
+th,td{padding:0}
+table{
+	border-collapse: collapse;
+}
+.clear{zoom: 1;}
+.clear:after{
+	content:"";
+	display: block;
+	clear: both;
+}
+.tab-header li{
+	color: #155CEC;
+	background:transparent;
+　background-color:rgba(255,255,255,0.15);
+	/*background:#FFF;*/
+	
+	margin-left: 20px;
+	float: left;
+}
+.tab-header .first_li{
+	margin-left: 0px;
+	background:#FFF;
+}
+ul{  
+    list-style: none;  
+}  
+.tab{
+	width:1000px;
+	height: 500px;
+	
+}
+ 
+.selected{
+	width: 100px;
+	height: 40px;
+	border:1px dashed #D5D5D5;
+	border-bottom:1px solid #FFF;
+	position: relative;
+	top: 1px;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+}
+.tab-content{
+	background:#FFF;
+	width: 1000px;
+	height: 467px;
+	border:1px dashed #D5D5D5;
+	z-index: -1;
+}
+.content{
+	width: 800px;
+	height: 400px;
+	margin-top:40px;
+	margin-left: 80px;
+	/*border: 1px solid red;*//**/
+}
+.radius{
+	display: inline-block;
+	width: 600px;
+	height: 30px;
+	border:1px dashed #AAA;
+	border-radius: 20px;
+	text-align: right;
+	line-height: 30px;
+	font-size: 14px;
+	color: black;
+	position: relative;
+}
+.radius span{
+	font-size: 12px;
+	color: #8e8e8e;
+}
+.content li{
+	color: #8e8e8e;
+	font-size: 14px;
+	margin-bottom: 20px;
+	
+}
+.li_span{
+	display: block;
+	background: #FFF;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+}
+.radius input{
+	border: none;
+	width:120px;
+	text-align: right;
+	position: relative;
+	z-index: 1;
+	margin-right: 10px;
+	}
+	.radius select{
+	border: none;
+	width:120px;
+	text-align: right;
+	position: relative;
+	z-index: 1;
+	margin-right: 10px;
+	}
+.save{
+	color: #FFF;
+	border-radius: 20px;
+	height: 36px;
+	width: 200px;
+	text-align: center;
+	line-height: 36px;
+	background: #155cec;
+	border: 1px solid #155cec;
+	margin-left: 100px;
+	margin-right: 20px;
+}
+.reset{
+	color: #29aafe;
+	border: 1px dashed #155cec;
+	border-radius: 20px;
+	height:30px;
+	width: 50px;
+	background: #FFF;
+}
+/*多选按钮样式设置*/  
+ .select_checkbox{  
+ 	color: #000;
+        position:relative;  
+        display: inline-block;
+    }  
+  
+    .select_checkbox .checkbox{    
+        position: relative;    
+        display: inline-block;    
+          
+        padding-left: 25px;    
+        cursor: pointer;    
+    }   
+    /*label input*/  
+    .select_checkbox .checkbox input{    
+        position: absolute;    
+        left:-2000px;  
+  
+    }  
+    .select_checkbox .checkbox i{    
+        display: block;    
+        position: absolute;    
+        top: 0;    
+        left: 0;    
+        width: 15px;    
+        height: 15px;    
+        background: url(../img/unselected.png) left top no-repeat;
+        background-size: cover;   
+        -moz-background-size:cover;  
+        -webkit-background-size:cover;  
+        background-image: url(../img/unselected.png);
+           
+    }  
+    .select_checkbox .checkbox input:checked+i{  
+        background: url(../img/selected.png) left top no-repeat;    
+        background-size: cover;  
+  
+    }
+    
+
+
+.row_three{
+	width: 200px;
+}
+.row_one{
+	width: 500px;
+}
+.row_two{
+	width: 300px;
+}
+.map_table{
+	width: 100%;
+}
+.map_table th{
+	font-weight: normal;
+	background: #f2fbff;
+	color:#8e8e8e ;
+}
+.map_table td{
+	
+}
+.map_table th,td{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border:1px solid #D5D5D5;
+}
+.first_th{
+	width: 14%;
+}
+.second_th{
+	width: 12%;
+}
+.third_th{
+	width: 18%;
+}
+.forth_th{
+	width: 40%;
+}
+.fifth_th{
+	width: 16%;
+}
+.rtsp{
+	background:#EEE;
+}
+.route_button{
+	color: #155CEC;
+	background: #FFF;
+	border: none;
+}
+.span_left{
+	display: inline-block;
+	width: 120px;
+	/*border:1px solid blue;*/
+	text-align: right;
+}
+.span_right{
+	color: #000;
+	display: inline-block;
+	width: 200px;
+	/*border:1px solid green;	*/
+}
+.change_button{
+	color: #FFF;
+	border-radius: 20px;
+	height: 36px;
+	width: 100px;
+	text-align: center;
+	line-height: 36px;
+	background: #155cec;
+	border: 1px solid #155cec;
+	margin-left: 50px;
+	margin-right: 20px;
+}
+.ul_left,.ul_right{
+	float: left;
+	width: 350px;
+	/*border:1px solid blue;*/
+}

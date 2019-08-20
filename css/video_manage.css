@@ -1,0 +1,456 @@
+.con_video_management,
+.con_camera {
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	display:none ;
+}
+
+
+.bitstream_type {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.bitstream_type_select {
+	margin-left: -60px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	border-radius: 15px;
+	padding: 0 0 0 230px;
+	border: 1px dashed #8e8e8e;
+}
+
+.video_type {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.video_type_select {
+	margin-left: -40px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 230px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.resolution {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.resolution_select {
+	margin-left: -48px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 210px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.rate_type {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.rate_type_select {
+	margin-left: -40px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 230px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.image_quality {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.image_quality_select {
+	margin-left: -60px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 260px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.video_frame_rate {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.video_frame_rate_select {
+	margin-left: -40px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 260px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.rate_upper_limit {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.rate_upper_limit_select {
+	margin-left: -60px;
+	margin-top: 25px;
+	width: 230px;
+	height: 30px;
+	padding: 0 0 0 170px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.video_coding {
+	position: relative;
+	top: -15px;
+	left: 75px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.video_coding_select {
+	margin-left: 1px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 240px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.smart {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.smart_select {
+	margin-left: -70px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 240px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.coding_complexity {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.coding_complexity_select {
+	margin-left: -50px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 260px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.frame_interval {
+	position: relative;
+	top: -15px;
+	left: 15px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.frame_interval_input {
+	margin-left: -55px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.SVC {
+	position: relative;
+	top: -15px;
+	left: 35px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.SVC_select {
+	margin-left: -20px;
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	padding: 0 0 0 240px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.kbps {
+	position: relative;
+	color: #000000;
+	left: 20px;
+}
+
+.bitstream_smoothing {
+	position: relative;
+	top: 50px;
+	left: 5px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.progress {
+	position: relative;
+	top: 30px;
+	left: 65px;
+	width: 300px;
+	height: 20px;
+	background: #cccccc;
+	border-radius: 15px;
+}
+
+.progress_bar {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	background: green;
+	border-radius: 15px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+}
+
+.progress_img {
+	position: absolute;
+	left: 0px;
+	top: -20px;
+	border-radius: 15px;
+}
+
+.number {
+	position: relative;
+	top: -17px;
+	left: 400px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.number_input {
+	margin-left: 340px;
+	margin-top: 2px;
+	direction: rtl;
+	width: 100px;
+	height: 30px;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.clear_smooth {
+	position: relative;
+	top: -1px;
+	left: 30px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.con_camera_ip_ad {
+	position: relative;
+	top: -16px;
+	left: 32px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.con_camera_ip_ad_input {
+	margin-left: -40px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.con_camera_port {
+	position: relative;
+	top: -15px;
+	left: 40px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.con_camera_port_input {
+	margin-left: -32px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.con_camera_username {
+	position: relative;
+	top: -15px;
+	left: 33px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.con_camera_username_input {
+	margin-left: -42px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.con_camera_password {
+	position: relative;
+	top: -15px;
+	left: 43px;
+	color: #8e8e8e;
+	background: #FFFFFF;
+	font-size: smaller;
+}
+
+.con_camera_password_input {
+	margin-left: -20px;
+	margin-top: 25px;
+	width: 300px;
+	height: 30px;
+	direction: rtl;
+	border-radius: 15px;
+	border: 1px dashed #8e8e8e;
+}
+
+.save,
+.con_camera_save {
+	margin-left: 18px;
+	margin-top: 50px;
+	width: 300px;
+	height: 30px;
+	border-radius: 15px;
+	color: white;
+	background-color: #155cec;
+	border: 1px dashed #8e8e8e;
+}
+
+.reset,
+.con_camera_reset {
+	margin-left: 18px;
+	margin-top: 50px;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	color: #155cec;
+	background-color: white;
+	border: 1px dashed #155cec;
+}
+
+.con_camera_start {
+	margin-left: 40px;
+	margin-top: 50px;
+	width: 15px;
+	height: 15px;
+}
+
+.con_camera_frame {
+	margin-left: 0px;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	color: white;
+	background-color: #155cec;
+	border: 1px dashed #155cec;
+}
+
+.video_jump {
+	position: absolute;
+	width: 100%;
+	height: 800px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #080808;
+}
+
+.jump-label {
+	position: relative;
+	color: #8e8e8e;
+}
+
+.jump_frame {
+	padding-top: 25px;
+	color: #000000;
+	border: 0;
+}
+
+.video_update_btn,
+.camera_update_btn {
+	margin-left: 0px;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	color: white;
+	background-color: #155cec;
+	border: 1px dashed #155cec;
+}
+

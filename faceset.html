@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>寰景信息</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/faceset.css" />
+		<link rel="stylesheet" type="text/css" href="css/table_info.css" />
+		<!--表格的样式-->
+		<link rel="stylesheet" type="text/css" href="css/xcConfirm.css" />
+		<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/xcConfirm.js"></script>
+		<script type="text/javascript" src="js/dialog.js"></script>
+		<script type="text/javascript" src="js/table.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".right_content").css("width", document.body.clientWidth - 270); // Janine：根据body的宽度减去人脸库的宽度的部分
+				$(".test").mouseover(function() {
+					$(".test").css("border-left", "#155cec 3px groove");
+					$(".test").css("background-color", "#effbff");
+					$(".test img").css("display", "block");
+				});
+				$(".test").mouseout(function() {
+					$(".test").css("border", "none");
+					$(".test").css("background-color", "#fff");
+					$(".test img").css("display", "none");
+					var timer = setTimeout(function() {
+						$(".test img").css("display", "none");
+					}, 200);
+				});
+
+				$(".blacklist").mouseover(function() {
+					$(".blacklist").css("border-left", "#155cec 3px groove");
+					$(".blacklist").css("background-color", "#effbff");
+					$(".blacklist img").css("display", "block");
+				});
+				$(".blacklist").mouseout(function() {
+					$(".blacklist").css("border", "none");
+					$(".blacklist").css("background-color", "#fff");
+					var timer = setTimeout(function() {
+						$(".blacklist img").css("display", "none");
+					}, 200);
+				});
+
+				$(".leader").mouseover(function() {
+					$(".leader").css("border-left", "#155cec 3px groove");
+					$(".leader").css("background-color", "#effbff");
+					$(".leader img").css("display", "block");
+				});
+				$(".leader").mouseout(function() {
+					$(".leader").css("border", "none");
+					$(".leader").css("background-color", "#fff");
+					var timer = setTimeout(function() {
+						$(".leader img").css("display", "none");
+					}, 200);
+				});
+
+				$(".employee").mouseover(function() {
+					$(".employee").css("border-left", "#155cec 3px groove");
+					$(".employee").css("background-color", "#effbff");
+					$(".employee img").css("display", "block");
+				});
+				$(".employee").mouseout(function() {
+					$(".employee").css("border", "none");
+					$(".employee").css("background-color", "#fff");
+					var timer = setTimeout(function() {
+						$(".employee img").css("display", "none");
+					}, 200);
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="entirety">
+			<!-----------------左边库菜单的样式------------------------>
+			<div class="left_rep">
+				<div class="face_rep">
+					<div class="face_rep_font">
+						<img src="img/face.png" class="add_img"> 人脸库
+						<img id="add_rep" src="img/add_rep.png" class="add_rep" />
+					</div>
+				</div>
+				<div class="various_libs">
+					<div class="libs test">
+						测试库
+						<img src="img/delete.png" class="add_rep" style="display: none;" />
+						<img src="img/edit.png" class="add_rep" style="display: none;" />
+					</div>
+					<div class="libs blacklist">
+						黑名单
+						<img src="img/delete.png" class="add_rep" style="display: none;" />
+						<img src="img/edit.png" class="add_rep" style="display: none;" />
+					</div>
+					<div class="libs leader">
+						领导人员库
+						<img src="img/delete.png" class="add_rep" style="display: none;" />
+						<img src="img/edit.png" class="add_rep" style="display: none;" />
+					</div>
+					<div class="libs employee">
+						普通员工
+						<img src="img/delete.png" class="add_rep" style="display: none;" />
+						<img src="img/edit.png" class="add_rep" style="display: none;" />
+					</div>
+				</div>
+			</div>
+			<!-----------------右边主体内容的样式------------------------>
+			<div class="right_content">
+				<div class="right_top_title">
+					<div class="right_top_title_font">查询条件</div>
+				</div>
+				<div class="right_content_table">
+					<div class="right_content_info">
+						<form role="form">
+							<div class="input_txt">
+								<label class="label_name">姓  名 :</label>
+								<input class="input_name" type="text" placeholder="输入名字" />
+							</div>
+
+							<div class="input_txt">
+								<label class="label_gender">性 别 :</label>
+								<select class="input_gender">
+									<option>全部</option>
+									<option>男</option>
+									<option>女</option>
+								</select>
+							</div>
+
+							<div class="input_txt" style="width: 450px;">
+								<label class="label_id" style="">身份证号 :</label>
+								<input class="input_id" type="text" placeholder="输入身份证号">
+							</div>
+
+							<div>
+								<input type="button" class="overall bule_button" value="查询" />
+								<input type="reset" class="overall dotted_button" value="重置" />
+							</div>
+						</form>
+					</div>
+					<div class="content_table">
+						<!-----------------------按钮选项----------------------->
+						<div class="content_table_button">
+							<button id="add_peo" type="button" class="overall_button dotted_button"><img src="img/add.png" class="img_button"/> 添加</button>
+							<button type="button" class="overall_button dotted_button"><img src="img/delete.png" class="img_button"/> 删除</button>
+							<button id="edit_peo" type="button" class="overall_button dotted_button"><img src="img/edit.png" class="img_button"/> 修改</button>
+							<button type="button" class="overall_button bule_button" style="float: right;"><img src="img/to_data.png" /> 导出</button>
+							<button id="import_info_btn" type="button" class="overall_button bule_button" style="float: right;"><img src="img/from_data.png" /> 导入</button>
+						</div>
+						<div class="face_table">
+							<div class="table">
+								<table id="table1">
+									<thead>
+										<tr style="background: #f1fbff;vertical-align: middle;">
+											<th width="84px">
+												<label class="checkbox" style="position: relative;top:1px;">
+								    				<input type="checkbox"/>
+								    					<i></i>
+												</label>
+											</th>
+											<th width="121px">序号</th>
+											<th width="189px">姓名</th>
+											<th width="139px">性别</th>
+											<th width="700px">身份证号</th>
+											<th>详细信息</th>
+										</tr>
+									</thead>
+
+									<tbody id="table2">
+										<!--添加表内容-->
+									</tbody>
+
+									<tfoot>
+										<tr>
+											<td colspan="6" id="span_nums">
+												<span id="spanFirst">首页</span>
+												<span id="spanPre">上页</span>
+												<span id="spanNext">下页</span>
+												<span id="spanPageNum"></span>/
+												<span id="spanTotalPage"></span>
+												<span>	<input style="width: 40px;" type="text" id="input_num" value="" /></span>
+												<span id="step_input_num">
+														<a href="#">转到</a>
+													</span>
+
+												<span id="spanLast">尾页</span>
+
+											</td>
+										</tr>
+									</tfoot>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+
+	<script>
+		function import_info() {
+
+			if($('.import_progress_bar').css('width') == '30px') {
+				//更换滑动条样式
+				$('.unim_progress2 img').attr('src', 'img/im_progress2.png');
+				$('.import_progress_bar').css('width', '190px');
+				//更换上传内容样式
+				$('.input_dashed_excel label').html('上传照片:').css('left', '-20px');
+				$('.input_dashed_excel img').attr('src', 'img/import_person.png');
+				//						$('.input_dashed_excel').after('<label>*请将照片名称与Excel文件内名称相同</label>').css('top','110px');
+				//更换按钮内容
+				$('.blacklist_im_submit').attr('value', '点击上传，进入下一步');
+				$('.blacklist_im_reset').attr('value', '上一步');
+
+			} else if($('.import_progress_bar').css('width') == '190px') {
+				//更换滑动条样式
+				$('.unim_progress3 img').attr('src', 'img/im_progress3.png');
+				$('.import_progress_bar').css('width', '400px');
+				//更换上传内容样式
+
+				$('.input_dashed_excel').css({
+					'border': 'none',
+					'width': '300px'
+				});
+				$('.input_dashed_excel img').remove();
+				for(var i = 0; i < 30; i++) {
+					$('.input_dashed_excel label').before('<img style="left:-90px; margin-left: 5px;" src="img/progress_off.png" />');
+				}
+				$('.input_dashed_excel label').html('导入进度').css('top', '90px');
+				//更换按钮内容
+				$('.blacklist_im_submit').attr('value', '完成，关闭对话框');
+				$('.blacklist_im_reset').remove();
+			}
+
+		}
+	</script>
+
+</html>
